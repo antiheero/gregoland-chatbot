@@ -1,0 +1,165 @@
+rpdg:
+- "Vive le parti unique ! <:burn:681557736084865174>"
+burn:
+- "Notre flamme brillera toujours <:burn:681557736084865174>"
+water:
+- "Elle n'éteindra pas la flamme, la goutte <:water:682335438719156234>. Elle nous sauvera tous."
+piano:
+- "J'aime le piano ! :musical_keyboard:"
+goulag:
+- "Ceux qui font le mal (pas le bien), on les envoie au goulag ! :bone: :cold_face: :railway_car: :skull:"
+invite:
+- |
+  Invite tes amis sur le serveur !
+  Utilise ce lien : https://discord.gg/RjxK6Wt
+humour+:
+- |
+  Qu'est-ce qui est jaune et qui attend ?
+  || Jonathan ! || C'était de l'humour drôle
+humour:
+- |
+  1. Quelle mamie fait peur aux voleurs ?
+  || Mamie Traillette. ||
+- |
+  2. J'ai une blague sur les magasins
+  || Mais elle a pas supermarché ||
+- |
+  3. Pourquoi est-ce c'est difficile de conduire dans le Nord ?
+  || Parce que les voitures arrêtent PAS DE CALER. ||
+- |
+  4. Comment est-ce que la chouette sait que son mari fait la gueule ?
+  || Parce qu’HIBOUDE ||
+- |
+  5. Pourquoi est-ce qu'on dit que les bretons sont tous frères et sœurs ?
+  || Parce qu’ils n’ont Quimper. ||
+- |
+  6. Pourquoi est-ce qu'on met tous les crocos en prison ?
+  || Parce que les crocos dealent. ||
+- |
+  7. Comment fait-on pour allumer un barbecue breton ?
+  || On utilise des breizh. ||
+- |
+  8. Pourquoi dit-on que les poissons travaillent illégalement ?
+  || Parce qu’ils n’ont pas de FISH de paie. ||
+- |
+  9. Quel est le bar préféré des espagnols ?
+  || Le Bar-celone ||
+- |
+  10. Pourquoi est-ce que les mexicains mangent-ils aux toilettes ?
+  || Parce qu’ils aiment manger épicé ||
+- |
+  11. Que faisaient les dinosaures quand ils n'arrivaient pas à se décider ?
+  || Des tirageosaures ||
+- |
+  12. Qu'est-ce qu'un tennisman adore faire ?
+  || Rendre des services ||
+- |
+  13. Pourquoi est-ce que les vêtements sont toujours fatigués quand ils sortent de la machine ?
+  || Parce qu’ils sont léssivés ||
+- |
+  14. Pourquoi est-ce que les livres ont-ils toujours chaud ?
+  || Parce qu’ils ont une couverture ||
+- |
+  15. Où est-ce que les super héros vont-ils faire leurs courses ?
+  || Au supermarché ||
+- |
+  16. Que se passe-t-il quand 2 poissons s'énervent ?
+  || Le thon monte ||
+- |
+  17. Quel fruit est assez fort pour couper des arbres ?
+  || Le ci-tron ||
+- |
+  18. Quel est le jambon que tout le monde déteste ?
+  || Le sale ami ||
+- |
+  19. Que fait un cendrier devant un ascenseur ?
+  || Il veut des cendres ||
+- |
+  20. Que dit une imprimante dans l'eau ?
+  || J’ai papier ||
+- |
+  21. Que dit une noisette quand elle tombe à l'eau ?
+  || Je me noix ||
+- |
+  22. Quel est l'aliment le plus hilarant ?
+  || Le riz ||
+- |
+  23. Pourquoi est-ce que les moutons aiment le chewing-gum ?
+  || Parce que c’est bon pour la laine ||
+- |
+  24. Quel est le sport préféré des insectes ?
+  || Le criquet ||
+- |
+  25. Quel est le café préféré des espagnols ?
+  || Le café Olé ||
+- |
+  26. Que fait Platon quand ça le démange ?
+  || Il Socrate ||
+- |
+  27. Pourquoi est ce que Hulk a un beau jardin ?
+  || Parce qu’il a la main verte ||
+- |
+  28. Qu'est-ce que fait un hibou dans une casserole ?
+  || Hi-bou ||
+- |
+  29. Qu'est-ce qu'un mort qui coupe du fromage ?
+  || Un fend-tome ||
+- |
+  30. Comment est-ce que les abeilles communiquent entre elles ?
+  || Par e-miel ||
+- |
+  31. Quel est l'arbre préféré des chômeurs ?
+  || Le bouleau ||
+- |
+  32. Que dit-on d'une fleur qui a eu zéro à son contrôle ?
+  || Qu’elle s’est plantée ||
+- |
+  33. Comment appelle-t-on un jeudi vraiment nul ?
+  || Une trajeudi ||
+- |
+  34. Que fait un employé de chez Sephora à sa pause clope ?
+  || Il parfumer ||
+- |
+  35. Qu'est-ce qu'une frite enceinte ?
+  || Une patate sautée ||
+- |
+  36. Qu'est ce qu'une lampe moche ?
+  || Un LEDron ||
+- |
+  37. Que fait une lampe quand elle se fait agresser ?
+  || Elle crie a LED ||
+- |
+  38. Est-ce qu'une poule peut parler anglais?
+  || Yes chicken ||
+- |
+  39. Qui vit dans les tavernes ?
+  || Les hommes de bières ||
+- |
+  40. Quelle est la danse préférée des chats ?
+  || Le cha cha cha ||
+- |
+  41. Qu'est ce qu'une carotte dans une flaque d'eau ?
+  || Un bonhomme de neige en été ||
+- |
+  42. Pourquoi est-ce que les bières sont toujours stressées ?
+  || Parce qu’elles ont la pression ||
+- |
+  43. Quelle princesse a les lèvres gercées ?
+  || Labello bois dormant ||
+- |
+  44. Pourquoi est ce que les poissons n'ont plus de maison ?
+  || Parce qu’on les a des truites ||
+- |
+  45. Pourquoi est ce que le lapin est bleu?
+  || Parce qu’on lapin ||
+hello:
+- |
+  ```Python
+  >>>print('hello world')
+  hello world
+  ```
+- |
+  ```Javascript
+  >>>console.log('hello world')
+  hello world
+  ```
