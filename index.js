@@ -45,7 +45,7 @@ client.on('message', msg => {
           msg.channel.send("Petit malin ! Utilise cette commande sur "+msg.guild.channels.get('685181829577572423').toString()+" ! Cette commande est beaucoup trop encombrante. Ce serait le bordel. Comprenez-nous ! :cry:")
         }
       } else if (scmd === "help") {
-        msg.channel.send("-- Aide des commandes --\nPréfixes :\n`"+prefix.join("`, `")+"` Exemples : `"+prefix.join("ping` = `")+"ping`\n- Économie :\n`eco get | set | add | remove`\n- Rôles achetables :\n`investir`\n- Commandes fixes (parfois aléatoires) :\n`"+Object.keys(data).join("` `")+"`\n- Commandes dynamiques :\n`help` `ping`\n- Développeurs :\n`listemojis` (uniquement sur "+msg.guild.channels.get('685181829577572423').toString()+")");
+        msg.channel.send("-- Aide des commandes --\nPréfixes :\n`"+prefix.join("`, `")+"` Exemples : `"+prefix.join("ping` = `")+"ping`\n- Économie :\n`eco get | set | add | remove`\n- Jeux :\n`pfc pierre | feuille | ciseaux`\n`chevaux <montant>`\n- Rôles achetables :\n`investir`\n- Commandes fixes (parfois aléatoires) :\n`"+Object.keys(data).join("` `")+"`\n- Commandes dynamiques :\n`help` `ping`\n- Développeurs :\n`listemojis` (uniquement sur "+msg.guild.channels.get('685181829577572423').toString()+")");
       } else if (scmd === "ping") {
         msg.channel.send("Pong! :ping_pong:\nMon ping est de : `"+Math.round(client.ping)+" ms` !")
       } else if (scmd === "an") {
@@ -149,6 +149,29 @@ client.on('message', msg => {
           
         } else {
           msg.channel.send("Il faut spécifier sur signe parier");
+        }
+      } else if (scmd === "chevaux") {
+        var ecoContents = fs.readFileSync('eco.yml', 'utf8');
+        var eco = yaml.safeLoad(ecoContents);
+        if (parseInt(cmd.split(" ")[1]) >= 0) {
+          if (eco[msg.author.id].money >= parseInt(cmd.split(" ")[1])) {
+            msg.channel.send("Vous pariez "+cmd.split(" ")[1]+" ₲ !");
+            if (Math.floor(Math.random()*12) === 1) {
+              msg.channel.send("Vous avez gagné "+cmd.split(" ")[1]*12+" ₲ !");
+              var gain = parseInt(cmd.split(" ")[1])*12;
+            } else {
+              msg.channel.send("Vous avez perdu "+cmd.split(" ")[1]+" ₲ !");
+              var gain = -1*parseInt(cmd.split(" ")[1]);
+            }
+            eco[msg.author.id].money += gain;
+            let ecoyaml = yaml.safeDump(eco);
+            fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+            msg.channel.send("Dans votre portefeuille, il y a `"+eco[msg.author.id].money+" "+eco.setup.devise+"` !");
+          } else {
+            msg.channel.send("Il faut de l'argent pour parier ! Tête de linotte !")
+          }
+        } else {
+          msg.channel.send("Veuillez spécifier un montant à parier !")
         }
       } else if (scmd === "investir") {
         if (cmd.split(" ")[1] === "-y") {
