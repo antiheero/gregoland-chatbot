@@ -207,7 +207,7 @@ client.on('message', msg => {
           } else {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
           }
-        } else {
+        } else if (Object.keys(data).includes(smcd.slice(1))) {
           var nb = msg.content.split(" ")[1]
           if (nb === undefined || data[scmd][parseInt(nb)-1] === undefined) {
             msg.channel.send(data[scmd][Math.floor(Math.random()*data[scmd].length)]);
@@ -221,7 +221,7 @@ client.on('message', msg => {
     }
   } else if (msg.channel.type === "dm") {
     if (scmd === "an") {
-      client.guilds.get("681549703212564547").channels.get("681549703216758883").send({embed: {
+      client.guilds.get("681549703212564547").systemChannel.send({embed: {
         color: msg.guild.members.get(msg.author.id).highestRole.color,
         author: {
           name: "Anonyme",
