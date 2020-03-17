@@ -23,6 +23,8 @@ client.on('guildMemberAdd', member => {
   if (member.guild.id === "681549703212564547") {
     member.guild.systemChannel.send("Vive le Parti unique !\nAu passage, il t'a accordé le rôle de Citoyen d'honneur !\nFinallement, le Parti t'accorde 100 ₲ ! Pour les recevoir, fais : ```\n!eco\n```");
     member.addRole("681556751509880889");
+  } else if (member.guild.id === "689476199172407440") {
+    member.addRole("689477316744970363");
   }
 })
 
@@ -207,7 +209,7 @@ client.on('message', msg => {
           } else {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
           }
-        } else if (Object.keys(data).includes(scmd.slice(1))) {
+        } else if (Object.keys(ymlattch).indexOf(scmd.slice(1)) >= 0) {
           var nb = msg.content.split(" ")[1]
           if (nb === undefined || data[scmd][parseInt(nb)-1] === undefined) {
             msg.channel.send(data[scmd][Math.floor(Math.random()*data[scmd].length)]);
@@ -221,6 +223,7 @@ client.on('message', msg => {
     }
   } else if (msg.channel.type === "dm") {
     if (prefix.indexOf(msg.content[0]) >= 0) {
+      console.log("'"+msg.content+"' was executed by "+msg.author.tag+" in a dm channel !");
       var cmd = msg.content.slice(1);
       var scmd = cmd.split(" ")[0];
       if (scmd === "an") {
@@ -236,5 +239,7 @@ client.on('message', msg => {
     }
   }
 })
+
+
 
 client.login(process.env.BOT_TOKEN);
