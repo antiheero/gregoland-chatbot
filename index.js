@@ -209,7 +209,7 @@ client.on('message', msg => {
           } else {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
           }
-        } else if (Object.keys(data).indexOf(scmd.slice(1)) >= 0) {
+        } else {
           var nb = msg.content.split(" ")[1]
           if (nb === undefined || data[scmd][parseInt(nb)-1] === undefined) {
             msg.channel.send(data[scmd][Math.floor(Math.random()*data[scmd].length)]);
@@ -218,7 +218,7 @@ client.on('message', msg => {
           }
         }
       } catch (e) {
-        msg.channel.send("```\n"+e+"\n```");
+        console.log("```\n"+e+"\n```");
       }
     }
   } else if (msg.channel.type === "dm") {
