@@ -209,7 +209,7 @@ client.on('message', msg => {
           } else {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
           }
-        } else if (Object.keys(ymlattch).indexOf(scmd.slice(1)) >= 0) {
+        } else if (Object.keys(data).indexOf(scmd.slice(1)) >= 0) {
           var nb = msg.content.split(" ")[1]
           if (nb === undefined || data[scmd][parseInt(nb)-1] === undefined) {
             msg.channel.send(data[scmd][Math.floor(Math.random()*data[scmd].length)]);
