@@ -45,7 +45,6 @@ client.on('message', msg => {
         if (scmd === "listemojis") {
           if (msg.channel.id === "685181829577572423") {
             const emojiList = msg.guild.emojis.map((e, x) => ({name:x,value:e+" = "+e.name}));
-            console.log(emojiList)
             msg.channel.send({embed:{color:255,fields:emojiList}})
           } else if (msg.guild.id === "681549703212564547") {
             console.log("ok")
