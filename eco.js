@@ -4,7 +4,10 @@ module.exports = (guild,msg,cmd,scmd) => {
   if (cmd.split(" ")[1] === undefined) {
     var ecoContents = fs.readFileSync('eco.yml', 'utf8');
     var eco = yaml.safeLoad(ecoContents);
-    if (msg.guild.members.get(cmd.split(" ")[2]) === undefined) {
+    if (msg.channel.type === "dm") {
+      var id = msg.author.id;
+      var pers = "Vous possédez : `";
+    } else if (msg.guild.members.get(cmd.split(" ")[2]) === undefined) {
       var id = msg.author.id;
       var pers = "Vous possédez : `";
     } else {
@@ -20,7 +23,10 @@ module.exports = (guild,msg,cmd,scmd) => {
   } else if (cmd.split(" ")[1] === "get") {
     var ecoContents = fs.readFileSync('eco.yml', 'utf8');
     var eco = yaml.safeLoad(ecoContents);
-    if (cmd.split(" ")[2] === undefined) {
+    if (msg.channel.type === "dm") {
+      var id = msg.author.id;
+      var pers = "Vous possédez : `";
+    } else if (cmd.split(" ")[2] === undefined) {
       var id = msg.author.id;
       var pers = "Vous possédez : `";
     } else if (msg.guild.members.get(cmd.split(" ")[2]) === undefined) {
@@ -41,7 +47,10 @@ module.exports = (guild,msg,cmd,scmd) => {
       if (parseInt(cmd.split(" ")[2]) === NaN) {
         msg.channel.send("Ce n'est pas un nombre !")
       } else {
-        if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
+        if (msg.channel.type === "dm") {
+          var id = msg.author.id;
+          var pers = "Vous possédez : `";
+        } else if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else {
@@ -74,7 +83,10 @@ module.exports = (guild,msg,cmd,scmd) => {
       } else if (parseInt(cmd.split(" ")[2]) === NaN) {
         msg.channel.send("Ce n'est pas un nombre !")
       } else {
-        if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
+        if (msg.channel.type === "dm") {
+          var id = msg.author.id;
+          var pers = "Vous possédez : `";
+        } else if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else {
@@ -105,7 +117,10 @@ module.exports = (guild,msg,cmd,scmd) => {
       if (parseInt(cmd.split(" ")[2]) === NaN) {
         msg.channel.send("Ce n'est pas un nombre !")
       } else {
-        if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
+        if (msg.channel.type === "dm") {
+          var id = msg.author.id;
+          var pers = "Vous possédez : `";
+        } else if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else {
