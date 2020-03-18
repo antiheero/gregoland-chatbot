@@ -218,7 +218,7 @@ client.on('message', msg => {
           }
         }
       } catch (e) {
-        console.log("```\n"+e+"\n```");
+        console.log(e);
       }
     }
   } else if (msg.channel.type === "dm") {
@@ -228,7 +228,7 @@ client.on('message', msg => {
       var scmd = cmd.split(" ")[0];
       if (scmd === "an") {
         client.guilds.get("681549703212564547").systemChannel.send({embed: {
-          color: msg.guild.members.get(msg.author.id).highestRole.color,
+          color: client.guilds.get("681549703212564547").get(msg.author.id).highestRole.color,
           author: {
             name: "Anonyme",
             icon_url: "https://image.flaticon.com/icons/png/512/36/36601.png"
