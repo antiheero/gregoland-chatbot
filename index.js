@@ -44,7 +44,7 @@ client.on('message', msg => {
         console.log("'"+msg.content+"' was executed by "+msg.author.tag+" on '"+msg.guild.name+"'.'"+msg.channel.name+"' !");
         if (scmd === "listemojis") {
           if (msg.channel.id === "685181829577572423") {
-            const emojiList = msg.guild.emojis.map((e, x) => {name:x,value:e+" = "+e.name});
+            const emojiList = msg.guild.emojis.map((e, x) => ({name:x,value:e+" = "+e.name}));
             msg.channel.send({embed:{description:emojiList,color:255,fields:emojiList})
           } else if (msg.guild.id === "681549703212564547") {
             console.log("ok")
