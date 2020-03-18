@@ -38,7 +38,7 @@ client.on('message', msg => {
       try {
         var cmd = msg.content.slice(1);
         var scmd = cmd.split(" ")[0];
-        console.log("'"+msg.content+"' was executed by "+msg.author.tag+" on '"+msg.guild.name+"' !");
+        console.log("'"+msg.content+"' was executed by "+msg.author.tag+" on '"+msg.guild.name+"'.'"+msg.channel+"' !");
         if (scmd === "listemojis") {
           if (msg.channel.id === "685181829577572423") {
             const emojiList = msg.guild.emojis.map((e, x) => (x + ' = ' + e) + ' | ' +e.name);
