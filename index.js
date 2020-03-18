@@ -222,29 +222,33 @@ client.on('message', msg => {
       }
     }
   } else if (msg.channel.type === "dm") {
-    if (prefix.indexOf(msg.content[0]) >= 0) {
-      console.log("'"+msg.content+"' was executed by "+msg.author.tag+" in a dm channel !");
-      var cmd = msg.content.slice(1);
-      var scmd = cmd.split(" ")[0];
-      if (scmd === "an") {
-        client.guilds.get("681549703212564547").systemChannel.send({embed: {
-          color: client.guilds.get("681549703212564547").members.get(msg.author.id).highestRole.color,
-          author: {
-            name: "Anonyme",
-            icon_url: "https://image.flaticon.com/icons/png/512/36/36601.png"
-          },
-          description: msg.content.slice(4)
-        }});
-      } else if (scmd === "an+") {
-        client.guilds.get("681549703212564547").systemChannel.send({embed: {
-          color: 0,
-          author: {
-            name: "Anonyme",
-            icon_url: "https://image.flaticon.com/icons/png/512/36/36601.png"
-          },
-          description: msg.content.slice(5)
-        }});
+    try {
+      if (prefix.indexOf(msg.content[0]) >= 0) {
+        console.log("'"+msg.content+"' was executed by "+msg.author.tag+" in a dm channel !");
+        var cmd = msg.content.slice(1);
+        var scmd = cmd.split(" ")[0];
+        if (scmd === "an") {
+          client.guilds.get("681549703212564547").systemChannel.send({embed: {
+            color: client.guilds.get("681549703212564547").members.get(msg.author.id).highestRole.color,
+            author: {
+              name: "Anonyme",
+              icon_url: "https://image.flaticon.com/icons/png/512/36/36601.png"
+            },
+            description: msg.content.slice(4)
+          }});
+        } else if (scmd === "an+") {
+          client.guilds.get("681549703212564547").systemChannel.send({embed: {
+            color: 0,
+            author: {
+              name: "Anonyme",
+              icon_url: "https://image.flaticon.com/icons/png/512/36/36601.png"
+            },
+            description: msg.content.slice(5)
+          }});
+        }
       }
+    } catch (e) {
+      console.log(e);
     }
   }
 })
