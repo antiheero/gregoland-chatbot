@@ -146,7 +146,7 @@ client.on('message', msg => {
         } else if (scmd === "id") {
           msg.reply("Ton id est : `"+msg.author.id+"` !")
         } else if (scmd === "eco") {
-          return ecojs(msg, cmd, scmd)
+          return ecojs(guild, msg, cmd, scmd)
         } else if (scmd === "pfc") {
           return pfc(msg, cmd, scmd)
         } else if (smcd === "chevaux") {
