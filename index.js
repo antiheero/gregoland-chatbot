@@ -149,7 +149,7 @@ client.on('message', msg => {
           return ecojs(guild, msg, cmd, scmd)
         } else if (scmd === "pfc") {
           return pfc(msg, cmd, scmd)
-        } else if (smcd === "chevaux") {
+        } else if (scmd === "chevaux") {
           return chevaux(msg, cmd, scmd)
         }
       }
@@ -158,7 +158,5 @@ client.on('message', msg => {
     }
   }
 })
-
-
 
 client.login(process.env.BOT_TOKEN);
