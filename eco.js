@@ -1,6 +1,6 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-module.exports = (client,msg,cmd,scmd) => {
+module.exports = (guild,msg,cmd,scmd) => {
   if (cmd.split(" ")[1] === undefined) {
     var ecoContents = fs.readFileSync('eco.yml', 'utf8');
     var eco = yaml.safeLoad(ecoContents);
@@ -37,7 +37,7 @@ module.exports = (client,msg,cmd,scmd) => {
     }
     msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
   } else if (cmd.split(" ")[1] === "add") {
-    if (client.guilds.get("681549703212564547").members.get(msg.author.id).roles.has("688093358673231999")) {
+    if (guild.members.get(msg.author.id).roles.has("688093358673231999")) {
       if (parseInt(cmd.split(" ")[2]) === NaN) {
         msg.channel.send("Ce n'est pas un nombre !")
       } else {
@@ -68,7 +68,7 @@ module.exports = (client,msg,cmd,scmd) => {
       msg.channel.send("Petit malin ! Tu n'as pas la permission");
     }
   } else if (cmd.split(" ")[1] === "set") {
-    if (client.guilds.get("681549703212564547").members.get(msg.author.id).roles.has("688093358673231999")) {
+    if (guild.members.get(msg.author.id).roles.has("688093358673231999")) {
       if (cmd.split(" ")[2] === undefined) {
         msg.channel.send("Veuillez préciser un nombre !")
       } else if (parseInt(cmd.split(" ")[2]) === NaN) {
@@ -101,7 +101,7 @@ module.exports = (client,msg,cmd,scmd) => {
       msg.channel.send("Petit malin ! Tu n'as pas la permission\nEn effet, il te manque le rôle 'Banquier Central' :dollar:");
     }
   } else if (cmd.split(" ")[1] === "remove") {
-    if (client.guilds.get("681549703212564547").members.get(msg.author.id).roles.has("688093358673231999")) {
+    if (guild.members.get(msg.author.id).roles.has("688093358673231999")) {
       if (parseInt(cmd.split(" ")[2]) === NaN) {
         msg.channel.send("Ce n'est pas un nombre !")
       } else {
