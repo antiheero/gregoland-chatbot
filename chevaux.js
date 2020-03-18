@@ -2,6 +2,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 
 module.exports = (msg,cmd,scmd) => {
+  const usermsg = msg;
   var ecoContents = fs.readFileSync('eco.yml', 'utf8');
   var eco = yaml.safeLoad(ecoContents);
   if (parseInt(cmd.split(" ")[1]) >= 1 && parseInt(cmd.split(" ")[1]) <= 12 && parseInt(cmd.split(" ")[2]) >= 0) {
@@ -31,7 +32,7 @@ module.exports = (msg,cmd,scmd) => {
 		  eco[msg.author.id].money += gain;
 		  let ecoyaml = yaml.safeDump(eco);
 		  fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-		  msg.channel.send("Dans votre portefeuille, il y a `"+eco[msg.author.id].money+" "+eco.setup.devise+"` !");
+		  msg.channel.send("Dans votre portefeuille, il y a `"+eco[usermsg.author.id].money+" "+eco.setup.devise+"` !");
 		}
 	      });
 	  }
