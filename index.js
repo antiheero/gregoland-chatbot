@@ -235,6 +235,15 @@ client.on('message', msg => {
           },
           description: msg.content.slice(4)
         }});
+      } else if (scmd === "an+") {
+        client.guilds.get("681549703212564547").systemChannel.send({embed: {
+          color: 0,
+          author: {
+            name: "Anonyme",
+            icon_url: "https://image.flaticon.com/icons/png/512/36/36601.png"
+          },
+          description: msg.content.slice(5)
+        }});
       }
     }
   }
