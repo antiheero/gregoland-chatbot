@@ -18,15 +18,14 @@ module.exports = (msg,cmd,scmd) => {
 	    for (var i = 0;i<chevaux.length;i++) {
 	      chevaux[i] += Math.floor(Math.random()*20);
 	    }
-	    console.log(chevaux);
 	    message.edit({embed:{title:chevaux[parseInt(cmd.split(" ")[1])-1]+"/"+Math.max(...chevaux)+" Course de chevaux",description:"01. "+spaces[chevaux[0]]+":racehorse:\n02. "+spaces[chevaux[1]]+":racehorse:\n03. "+spaces[chevaux[2]]+":racehorse:\n04. "+spaces[chevaux[3]]+":racehorse:\n05. "+spaces[chevaux[4]]+":racehorse:\n06. "+spaces[chevaux[5]]+":racehorse:\n07. "+spaces[chevaux[6]]+":racehorse:\n08. "+spaces[chevaux[7]]+":racehorse:\n09. "+spaces[chevaux[8]]+":racehorse:\n10. "+spaces[chevaux[9]]+":racehorse:\n11. "+spaces[chevaux[10]]+":racehorse:\n12. "+spaces[chevaux[11]]+":racehorse:"}})
 	      .then(msg => {
 		if (parseInt(msg.embeds[0].title.split("/")[1].split(" ")[0]) === Math.max(...chevaux)) {
 		  if (Math.floor(Math.random()*12) === parseInt(cmd.split(" ")[1])) {
-		    msg.channel.send("Vous avez gagné "+cmd.split(" ")[1]*12+" ₲ !");
+		    msg.channel.send("Vous avez gagné "+cmd.split(" ")[2]*12+" ₲ !");
 		    var gain = parseInt(cmd.split(" ")[2])*12;
 		  } else {
-		    msg.channel.send("Vous avez perdu "+cmd.split(" ")[1]+" ₲ !");
+		    msg.channel.send("Vous avez perdu "+cmd.split(" ")[2]+" ₲ !");
 		    var gain = -1*parseInt(cmd.split(" ")[2]);
 		  }
 		  eco[msg.author.id].money += gain;
