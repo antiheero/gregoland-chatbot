@@ -32,10 +32,10 @@ client.on('guildMemberAdd', member => {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  const guild = client.guilds.get("681549703212564547");
 })
 
 client.on('message', msg => {
+  const guild = client.guilds.get("681549703212564547");
   if (msg.channel.type === "text") {
     if (prefix.indexOf(msg.content[0]) >= 0) {
       try {
