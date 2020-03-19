@@ -124,7 +124,7 @@ client.on('message', msg => {
               }
             } else {
               msg.channel.send("Le rôle Entrepreneur expérimenté coûte 500 ₲");
-              msg.channel.send("Pour l'obtenir : Tapez```\n!investir -y\n```");
+              msg.channel.send("Pour l'obtenir : Tapez```\n!grandir -y\n```");
             }
           } else {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
@@ -150,7 +150,7 @@ client.on('message', msg => {
               }
             } else {
               msg.channel.send("Le rôle Entrepreneur expérimenté coûte 9999 ₲");
-              msg.channel.send("Pour l'obtenir : Tapez```\n!investir -y\n```");
+              msg.channel.send("Pour l'obtenir : Tapez```\n!affaires -y\n```");
             }
           } else {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
