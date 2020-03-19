@@ -25,12 +25,12 @@ module.exports = (msg,cmd,scmd) => {
       eco[msg.author.id] = {money: eco.setup.base+gain};
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
+      msg.channel.send({embed:{color:3447003,fields:[{name:"Moi",value:e2,inline:true},{name:"Vous",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else if (eco[msg.author.id].money >= 10) {
       eco[msg.author.id].money += gain;
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
+      msg.channel.send({embed:{color:3447003,fields:[{name:"Moi",value:e2,inline:true},{name:"Vous",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else {
       msg.channel.send("Pour parier, il te faut au moins 10 "+eco.setup.devise+" !")
     }
@@ -53,12 +53,12 @@ module.exports = (msg,cmd,scmd) => {
       eco[msg.author.id] = {money: eco.setup.base+gain};
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
+      msg.channel.send({embed:{color:3447003,fields:[{name:"Moi",value:e2,inline:true},{name:"Vous",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else if (eco[msg.author.id].money >= 10) {
       eco[msg.author.id].money += gain;
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
+      msg.channel.send({embed:{color:3447003,fields:[{name:"Moi",value:e2,inline:true},{name:"Vous",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else {
       msg.channel.send("Pour parier, il te faut au moins 3 "+eco.setup.devise+" !")
     }
@@ -81,12 +81,12 @@ module.exports = (msg,cmd,scmd) => {
       eco[msg.author.id] = {money: eco.setup.base+gain};
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
+      msg.channel.send({embed:{color:3447003,fields:[{name:"Moi",value:e2,inline:true},{name:"Vous",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else if (eco[msg.author.id].money >= 10) {
       eco[msg.author.id].money += gain;
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
+      msg.channel.send({embed:{color:3447003,fields:[{name:"Moi",value:e2,inline:true},{name:"Vous",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else {
       msg.channel.send("Pour parier, il te faut au moins 3 "+eco.setup.devise+" !")
     }
