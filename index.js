@@ -77,7 +77,7 @@ client.on('message', msg => {
           return ecojs(guild, msg, cmd, scmd)
         } else if (scmd === "pfc") {
           return pfc(msg, cmd, scmd)
-        } else if (smcd === "chevaux") {
+        } else if (scmd === "chevaux") {
           return chevaux(msg, cmd, scmd)
         } else if (scmd === "investir") {
           if (msg.guild.id === "681549703212564547") {
