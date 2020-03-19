@@ -6,18 +6,20 @@ module.exports = (msg,cmd,scmd) => {
   msg.channel.send("Dans votre portefeuille, il y a `"+eco[msg.author.id].money+" "+eco.setup.devise+"` !");
   var bothandlist = ["pierre","feuille","ciseaux"]
   var bothand = bothandlist[Math.floor(Math.random()*bothandlist.length)]
-  var gain = 0
+  var gain = 0;
+  var e1 = "";
+  var e2 = "";
   if (cmd.split(" ")[1] === "pierre") {
-    const e1 = ":punch:";
+    e1 = ":punch:";
     if (bothand === "pierre") {
       gain = 0;
-      const e2 = ":punch:";
+      e2 = ":punch:";
     } else if (bothand === "feuille") {
       gain = -10;
-      const e2 = ":raised_hand:";
+      e2 = ":raised_hand:";
     } else if (bothand === "ciseaux") {
       gain = 10;
-      const e2 = ":v:";
+      e2 = ":v:";
     }
     if (eco[msg.author.id] === undefined) {
       eco[msg.author.id] = {money: eco.setup.base+gain};
@@ -36,16 +38,16 @@ module.exports = (msg,cmd,scmd) => {
     var eco = yaml.safeLoad(ecoContents);
             
   } else if (cmd.split(" ")[1] === "feuille") {
-    const e1 = ":raised_hand:";
+    e1 = ":raised_hand:";
     if (bothand === "pierre") {
       gain = 10;
-      const e2 = ":punch:";
+      e2 = ":punch:";
     } else if (bothand === "feuille") {
       gain = 0;
-      const e2 = ":raised_hand:";
+      e2 = ":raised_hand:";
     } else if (bothand === "ciseaux") {
       gain = -10;
-      const e2 = ":v:";
+      e2 = ":v:";
     }
     if (eco[msg.author.id] === undefined) {
       eco[msg.author.id] = {money: eco.setup.base+gain};
@@ -64,16 +66,16 @@ module.exports = (msg,cmd,scmd) => {
     var eco = yaml.safeLoad(ecoContents);
             
   } else if (cmd.split(" ")[1] === "ciseaux") {
-    const e1 = ":v:";
+    e1 = ":v:";
     if (bothand === "pierre") {
       gain = -10;
-      const e2 = ":punch:";
+      e2 = ":punch:";
     } else if (bothand === "feuille") {
       gain = 10;
-      const e2 = ":raised_hand:";
+      e2 = ":raised_hand:";
     } else if (bothand === "ciseaux") {
       gain = 0;
-      const e2 = ":v:";
+      e2 = ":v:";
     }
     if (eco[msg.author.id] === undefined) {
       eco[msg.author.id] = {money: eco.setup.base+gain};
