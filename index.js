@@ -54,7 +54,7 @@ client.on('message', msg => {
           }
         } else if (scmd === "help") {
           if (msg.guild.id === "681549703212564547") {
-            msg.channel.send({embed:{author:{name:"Chat Bot",icon_url:client.user.avatarURL},color:0,title:"Aide des commandes",fields:[{name:"Préfixes : `"+prefix.join("`, `")+"`",value:"Exemples : `"+prefix.join("ping` = `")+"ping`"},{name:"- Économie :",value:"`eco get | set | add | remove`"},{name:"- Jeux :",value:"`pfc pierre | feuille | ciseaux`\n`chevaux <montant>`"},{name:"- Rôles achetables :",value:"`investir`"},{name:"- Commandes fixes (parfois aléatoires) :",value:"`"+Object.keys(data).join("` `")+"`"},{name:"- Commandes dynamiques :",value:"\n`help` `ping`"},{name:"- Développeurs :",value:"`listemojis` (uniquement sur "+msg.guild.channels.get('685181829577572423').toString()+")"}]}});
+            msg.channel.send({embed:{author:{name:"Chat Bot",icon_url:client.user.avatarURL},color:0,title:"Aide des commandes",fields:[{name:"Préfixes : `"+prefix.join("`, `")+"`",value:"Exemples : `"+prefix.join("ping` = `")+"ping`"},{name:"- Économie :",value:"`eco get | set | add | remove`"},{name:"- Jeux :",value:"`pfc pierre | feuille | ciseaux`\n`chevaux <montant>`"},{name:"- Rôles achetables :",value:"`investir` `grandir`"},{name:"- Commandes fixes (parfois aléatoires) :",value:"`"+Object.keys(data).join("` `")+"`"},{name:"- Commandes dynamiques :",value:"\n`help` `ping`"},{name:"- Développeurs :",value:"`listemojis` (uniquement sur "+msg.guild.channels.get('685181829577572423').toString()+")"}]}});
           } else {
             msg.channel.send("Ce bot est celui du serveur de GoldenVal RPD du Grégoland.\nhttps://discord.gg/RjxK6Wt");
             msg.channel.send({embed:{author:{name:"Chat Bot",icon_url:client.user.avatarURL},color:0,title:"Aide des commandes",fields:[{name:"Préfixes : `"+prefix.join("`, `")+"`",value:"Exemples : `"+prefix.join("ping` = `")+"ping`"},{name:"- Économie :",value:"`eco get | set | add | remove`"},{name:"- Jeux :",value:"`pfc pierre | feuille | ciseaux`\n`chevaux <montant>`"},{name:"- Commandes fixes (parfois aléatoires) :",value:"`"+Object.keys(data).join("` `")+"`"},{name:"- Commandes dynamiques :",value:"\n`help` `ping`"},{name:"- Développeurs :",value:"`listemojis` (uniquement sur RPD du Grégoland)"}]}});
@@ -98,6 +98,58 @@ client.on('message', msg => {
               }
             } else {
               msg.channel.send("Le rôle auto-entrepreneur coûte 101 ₲");
+              msg.channel.send("Pour l'obtenir : Tapez```\n!investir -y\n```");
+            }
+          } else {
+            msg.channel.send("Faites cette commande sur RPD du Grégoland");
+          }
+        } else if (scmd === "grandir") {
+          if (msg.guild.id === "681549703212564547") {
+            if (cmd.split(" ")[1] === "-y") {
+              var ecoContents = fs.readFileSync('eco.yml', 'utf8');
+              var eco = yaml.safeLoad(ecoContents);
+              if (msg.guild.members.get(msg.author.id).roles.has("688386606012432399")) {
+                msg.channel.send("Vous avez déjà le rôle")
+              } else if (!msg.guild.members.get(msg.author.id).roles.has("688340581860114455")) {
+                msg.channel.send("Il vous manque le rôle Auto-entrepreneur. Pour l'obtenir : faites```\n!investir\n```")
+              } else if (eco[msg.author.id].money >= 500) {
+                eco[msg.author.id].money -= 500;
+                msg.guild.members.get(msg.author.id).addRole("688386606012432399");
+                msg.channel.send("Vous avez le rôle");
+                let ecoyaml = yaml.safeDump(eco);
+                fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+                msg.channel.send("Dans votre portefeuille, il y a `"+eco[msg.author.id].money+" "+eco.setup.devise+"` !");
+              } else {
+                msg.channel.send("Vous n'avez pas assez d'argent")
+              }
+            } else {
+              msg.channel.send("Le rôle Entrepreneur expérimenté coûte 500 ₲");
+              msg.channel.send("Pour l'obtenir : Tapez```\n!investir -y\n```");
+            }
+          } else {
+            msg.channel.send("Faites cette commande sur RPD du Grégoland");
+          }
+        } else if (scmd === "affaires") {
+          if (msg.guild.id === "681549703212564547") {
+            if (cmd.split(" ")[1] === "-y") {
+              var ecoContents = fs.readFileSync('eco.yml', 'utf8');
+              var eco = yaml.safeLoad(ecoContents);
+              if (msg.guild.members.get(msg.author.id).roles.has("688386756940136465")) {
+                msg.channel.send("Vous avez déjà le rôle")
+              } else if (!msg.guild.members.get(msg.author.id).roles.has("688386606012432399")) {
+                msg.channel.send("Il vous manque le rôle Entrepreneur expérimenté. Pour l'obtenir : faites```\n!investir\n```")
+              } else if (eco[msg.author.id].money >= 9999) {
+                eco[msg.author.id].money -= 9999;
+                msg.guild.members.get(msg.author.id).addRole("688386606012432399");
+                msg.channel.send("Vous avez le rôle");
+                let ecoyaml = yaml.safeDump(eco);
+                fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+                msg.channel.send("Dans votre portefeuille, il y a `"+eco[msg.author.id].money+" "+eco.setup.devise+"` !");
+              } else {
+                msg.channel.send("Vous n'avez pas assez d'argent")
+              }
+            } else {
+              msg.channel.send("Le rôle Entrepreneur expérimenté coûte 9999 ₲");
               msg.channel.send("Pour l'obtenir : Tapez```\n!investir -y\n```");
             }
           } else {
