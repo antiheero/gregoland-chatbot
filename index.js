@@ -137,7 +137,7 @@ client.on('message', msg => {
               if (msg.guild.members.get(msg.author.id).roles.has("688386756940136465")) {
                 msg.channel.send("Vous avez déjà le rôle")
               } else if (!msg.guild.members.get(msg.author.id).roles.has("688386606012432399")) {
-                msg.channel.send("Il vous manque le rôle Entrepreneur expérimenté. Pour l'obtenir : faites```\n!investir\n```")
+                msg.channel.send("Il vous manque le rôle Entrepreneur expérimenté. Pour l'obtenir : faites```\n!grandir\n```")
               } else if (eco[msg.author.id].money >= 9999) {
                 eco[msg.author.id].money -= 9999;
                 msg.guild.members.get(msg.author.id).addRole("688386606012432399");
