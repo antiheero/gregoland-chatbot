@@ -140,7 +140,7 @@ client.on('message', msg => {
                 msg.channel.send("Il vous manque le rôle Entrepreneur expérimenté. Pour l'obtenir : faites```\n!grandir\n```")
               } else if (eco[msg.author.id].money >= 9999) {
                 eco[msg.author.id].money -= 9999;
-                msg.guild.members.get(msg.author.id).addRole("688386606012432399");
+                msg.guild.members.get(msg.author.id).addRole("688386756940136465");
                 msg.channel.send("Vous avez le rôle");
                 let ecoyaml = yaml.safeDump(eco);
                 fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
