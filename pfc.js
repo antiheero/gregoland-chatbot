@@ -28,10 +28,9 @@ module.exports = (msg,cmd,scmd) => {
       eco[msg.author.id].money += gain;
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send("J'ai choisi "+bothand+" !");
-      msg.channel.send("Maintenant, il y a `"+eco[msg.author.id].money+" "+eco.setup.devise+"` sur votre compte !");
+      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else {
-      msg.channel.send("Pour parier, il te faut au moins 3 "+eco.setup.devise+" !")
+      msg.channel.send("Pour parier, il te faut au moins 10 "+eco.setup.devise+" !")
     }
     var ecoContents = fs.readFileSync('eco.yml', 'utf8');
     var eco = yaml.safeLoad(ecoContents);
@@ -54,11 +53,10 @@ module.exports = (msg,cmd,scmd) => {
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
       msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else if (eco[msg.author.id].money >= 10) {
-      msg.channel.send("J'ai choisi "+bothand+" !");
       eco[msg.author.id].money += gain;
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send("Maintenant, il y a `"+eco[msg.author.id].money+" "+eco.setup.devise+"` sur votre compte !");
+      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else {
       msg.channel.send("Pour parier, il te faut au moins 3 "+eco.setup.devise+" !")
     }
@@ -83,11 +81,10 @@ module.exports = (msg,cmd,scmd) => {
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
       msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else if (eco[msg.author.id].money >= 10) {
-      msg.channel.send("J'ai choisi "+bothand+" !");
       eco[msg.author.id].money += gain;
       let ecoyaml = yaml.safeDump(eco);
       fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-      msg.channel.send("Maintenant, il y a `"+eco[msg.author.id].money+" "+eco.setup.devise+"` sur votre compte !");
+      msg.channel.send({embed:{color:3447003,fields:[{name:"J'ai choisi",value:e2,inline:true},{name:"Vous avez choisi",value:e1,inline:true},{name:"Gain",value:gain+" "+eco.setup.devise},{name:"Sur votre compte",value:eco[msg.author.id].money+" "+eco.setup.devise}]}});
     } else {
       msg.channel.send("Pour parier, il te faut au moins 3 "+eco.setup.devise+" !")
     }
