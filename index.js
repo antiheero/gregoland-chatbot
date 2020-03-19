@@ -149,7 +149,7 @@ client.on('message', msg => {
                 msg.channel.send("Vous n'avez pas assez d'argent")
               }
             } else {
-              msg.channel.send("Le rôle Entrepreneur expérimenté coûte 9999 ₲");
+              msg.channel.send("Le rôle Investisseur privilégié coûte 9999 ₲");
               msg.channel.send("Pour l'obtenir : Tapez```\n!affaires -y\n```");
             }
           } else {
