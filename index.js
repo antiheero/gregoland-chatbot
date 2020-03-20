@@ -14,6 +14,7 @@ const pfc = require('./pfc');
 const chevaux = require('./chevaux');
 const kick = require('./kick');
 const ban = require('./ban');
+const hook = new Discord.WebhookClient('690529746412634112', 'h8e3immEBtqlnJIs4nPuXKM8oKGuoA1UgBsLE--WOcllFUHFiY9-Wp1MdEbLuAHnuZ44');
 
 // Files
 const ymlattch = new Discord.MessageAttachment(yamlContents, "messages.yml");
@@ -33,6 +34,11 @@ client.on('guildMemberAdd', member => {
 })
 
 client.on('ready', () => {
+    const whl = function() {
+        hook.send("test");
+        client.setTimeout(whl,10000);
+    }
+    client.setTimeout(whl,10000);
 	console.log(`Logged in as ${client.user.tag}!`);
 })
 
@@ -85,10 +91,10 @@ client.on('message', msg => {
 					msg.reply("Ton id est : `"+msg.author.id+"` !")
 				} else if (scmd === "eco") {
 					return ecojs(guild, msg, cmd, scmd)
-                } else if (scmd === "kick") {
-                    return kick(msg)
-                } else if (scmd === "ban") {
-                    return ban(msg)
+								} else if (scmd === "kick") {
+										return kick(msg)
+								} else if (scmd === "ban") {
+										return ban(msg)
 				} else if (scmd === "pfc") {
 					return pfc(msg, cmd, scmd)
 				} else if (scmd === "chevaux") {
@@ -172,26 +178,26 @@ client.on('message', msg => {
 				} else if (scmd === "avatar") {
 					msg.channel.send("Your avatar :",{attachment:msg.author.avatarURL})
 				} else if (scmd === "+") {
-                    const user = msg.mentions.users.first()
-                    if (user) {
-                        const msgmember = msg.guild.member(msg.author);
-                        const member = msg.guild.member(user);
-                        if (member) {
-                            const position = msgmember.highestRole.comparePositionTo(member.highestRole);
-                            if (position < 0) {
-                                msg.channel.send("Vous avez un rôle inférieur à "+member+" (à "+-1*position+" rôles) !");
-                            } else if (position === 0) {
-                                msg.channel.send("Vous avez des rôles égaux");
-                            } else if (position > 0) {
-                                msg.channel.send("Vous avez un rôle supérieur à "+member+" (à "+position+" rôles) !")
-                            }
-                        } else {
-                            msg.channel.send("L'utilisateur n'est pas dans le serveur")
-                        }
-                    } else {
-                        msg.channel.send("Personne n'est mentionné !")
-                    }
-                } else {
+										const user = msg.mentions.users.first()
+										if (user) {
+												const msgmember = msg.guild.member(msg.author);
+												const member = msg.guild.member(user);
+												if (member) {
+														const position = msgmember.highestRole.comparePositionTo(member.highestRole);
+														if (position < 0) {
+																msg.channel.send("Vous avez un rôle inférieur à "+member+" (à "+-1*position+" rôles) !");
+														} else if (position === 0) {
+																msg.channel.send("Vous avez des rôles égaux");
+														} else if (position > 0) {
+																msg.channel.send("Vous avez un rôle supérieur à "+member+" (à "+position+" rôles) !")
+														}
+												} else {
+														msg.channel.send("L'utilisateur n'est pas dans le serveur")
+												}
+										} else {
+												msg.channel.send("Personne n'est mentionné !")
+										}
+								} else {
 					try {
 						var nb = msg.content.split(" ")[1]
 						if (nb === undefined || data[scmd][parseInt(nb)-1] === undefined) {
