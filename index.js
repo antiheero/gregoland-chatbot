@@ -173,26 +173,31 @@ client.on('message', msg => {
 				} else if (scmd === "avatar") {
 					msg.channel.send("Your avatar :",{attachment:msg.author.avatarURL})
 				} else if (scmd === "+") {
-										const user = msg.mentions.users.first()
-										if (user) {
-												const msgmember = msg.guild.member(msg.author);
-												const member = msg.guild.member(user);
-												if (member) {
-														const position = msgmember.highestRole.comparePositionTo(member.highestRole);
-														if (position < 0) {
-																msg.channel.send("Vous avez un rôle inférieur à "+member+" (à "+-1*position+" rôle(s)) !");
-														} else if (position === 0) {
-																msg.channel.send("Vous avez des rôles égaux");
-														} else if (position > 0) {
-																msg.channel.send("Vous avez un rôle supérieur à "+member+" (à "+position+" rôle(s)) !")
-														}
-												} else {
-														msg.channel.send("L'utilisateur n'est pas dans le serveur")
-												}
-										} else {
-												msg.channel.send("Personne n'est mentionné !")
-										}
-								} else {
+					const user = msg.mentions.users.first()
+					if (user) {
+						const msgmember = msg.guild.member(msg.author);
+						const member = msg.guild.member(user);
+						if (msg.guild.owner === msgmember) {
+							msg.channel.send("Vous êtes le propriétaire du serveur ! Par conséquent, vous avez toutes les permissions !")
+						} else if (msg.guild.owner === member) {
+							msg.channel.send(member+" est le propriétaire du serveur et a toutes les permissions !")
+						}
+						if (member) {
+							const position = msgmember.highestRole.comparePositionTo(member.highestRole);
+							if (position < 0) {
+								msg.channel.send("Vous avez un rôle inférieur à "+member+" (à "+-1*position+" rôle(s)) !");
+							} else if (position === 0) {
+								msg.channel.send("Vous avez des rôles égaux");
+							} else if (position > 0) {
+								msg.channel.send("Vous avez un rôle supérieur à "+member+" (à "+position+" rôle(s)) !")
+							}
+						} else {
+							msg.channel.send("L'utilisateur n'est pas dans le serveur")
+						}
+					} else {
+						msg.channel.send("Personne n'est mentionné !")
+					}
+				} else {
 					try {
 						var nb = msg.content.split(" ")[1]
 						if (nb === undefined || data[scmd][parseInt(nb)-1] === undefined) {
