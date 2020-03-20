@@ -2,6 +2,7 @@ module.exports = msg => {
 	if (!msg.guild) return;
 	const user = msg.mentions.users.first();
 	if (user) {
+		const msgmember = msg.guild.member(msg.author);
 		const member = msg.guild.member(user);
 		if (member) {
 			const position = msgmember.highestRole.comparePositionTo(member.highestRole);
