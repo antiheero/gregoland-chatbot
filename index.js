@@ -34,6 +34,14 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 })
 
+client.on('messageDelete', msg => {
+  console.log("This message : \""+msg.content+"\" ("+msg.author.tag+") was deleted !")
+})
+
+client.on('messageDelete', (oldmsg,newmsg) => {
+  console.log("This message : \""+oldmsg.content+"\" ("+oldmsg.author.tag+") was updated to "+newmsg.content+" !")
+})
+
 client.on('message', msg => {
   const guild = client.guilds.get("681549703212564547");
   if (msg.channel.type === "text") {
