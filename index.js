@@ -188,11 +188,11 @@ client.on('message', msg => {
 												if (member) {
 														const position = msgmember.highestRole.comparePositionTo(member.highestRole);
 														if (position < 0) {
-																msg.channel.send("Vous avez un rôle inférieur à "+member+" (à "+-1*position+" rôles) !");
+																msg.channel.send("Vous avez un rôle inférieur à "+member+" (à "+-1*position+" rôle(s)) !");
 														} else if (position === 0) {
 																msg.channel.send("Vous avez des rôles égaux");
 														} else if (position > 0) {
-																msg.channel.send("Vous avez un rôle supérieur à "+member+" (à "+position+" rôles) !")
+																msg.channel.send("Vous avez un rôle supérieur à "+member+" (à "+position+" rôle(s)) !")
 														}
 												} else {
 														msg.channel.send("L'utilisateur n'est pas dans le serveur")
