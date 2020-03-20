@@ -163,6 +163,8 @@ client.on('message', msg => {
           } else {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
           }
+        } else if (scmd === "avatar") {
+          msg.channel.send("Your avatar : "+msg.author.avatarURL+" !")
         } else {
           try {
             var nb = msg.content.split(" ")[1]
