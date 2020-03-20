@@ -19,11 +19,11 @@ const jsbuffer = fs.readFileSync('./index.js');
 const jsattch = new Discord.MessageAttachment(jsbuffer, "index.js");
 
 client.on('guildMemberAdd', member => {
-  member.guild.systemChannel.send(
+  member.send(
     `Bienvenue sur le serveur <@${member.user.id}> !`
   );
   if (member.guild.id === "681549703212564547") {
-    member.guild.systemChannel.send("Vive le Parti unique !\nAu passage, il t'a accordé le rôle de Citoyen d'honneur !\nFinallement, le Parti t'accorde 100 ₲ ! Pour les recevoir, fais : ```\n!eco\n```");
+    member.send("Vive le Parti unique !\nAu passage, il t'a accordé le rôle de Citoyen d'honneur !\nFinallement, le Parti t'accorde 100 ₲ ! Pour les recevoir, fais : ```\n!eco\n```");
     member.addRole("681556751509880889");
   } else if (member.guild.id === "689476199172407440") {
     member.addRole("689477316744970363");
