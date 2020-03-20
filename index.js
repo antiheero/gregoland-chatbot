@@ -65,10 +65,10 @@ client.on('message', msg => {
 					}
 				} else if (scmd === "help") {
 					if (msg.guild.id === "681549703212564547") {
-						msg.channel.send({embed:{author:{name:"Chat Bot",icon_url:client.user.avatarURL},color:0,title:"Aide des commandes",fields:[{name:"Préfixes : `"+prefix.join("`, `")+"`",value:"Exemples : `"+prefix.join("ping` = `")+"ping`"},{name:"- Économie :",value:"`eco get | set | add | remove`"},{name:"- Jeux :",value:"`pfc pierre | feuille | ciseaux`\n`chevaux <cheval> <montant>`"},{name:"- Rôles achetables :",value:"`investir` `grandir` `affaires`"},{name:"- Commandes fixes (parfois aléatoires) :",value:"`"+Object.keys(data).join("` `")+"`"},{name:"- Modération",value:"`kick` `ban`"},{name:"- Commandes dynamiques :",value:"`help` `ping`"},{name:"- Développeurs :",value:"`listemojis` (uniquement sur "+msg.guild.channels.get('685181829577572423').toString()+")"}]}});
+						msg.channel.send({embed:{author:{name:"Chat Bot",icon_url:client.user.avatarURL},color:0,title:"Aide des commandes",fields:[{name:"Préfixes : `"+prefix.join("`, `")+"`",value:"Exemples : `"+prefix.join("ping` = `")+"ping`"},{name:"- Hierarchie",value:"`cr` (compare role: compare les rôles de deux personnes)"},{name:"- Économie :",value:"`eco get | set | add | remove`"},{name:"- Jeux :",value:"`pfc pierre | feuille | ciseaux`\n`chevaux <cheval> <montant>`"},{name:"- Rôles achetables :",value:"`investir` `grandir` `affaires`"},{name:"- Commandes fixes (parfois aléatoires) :",value:"`"+Object.keys(data).join("` `")+"`"},{name:"- Modération",value:"`kick` `ban`"},{name:"- Commandes dynamiques :",value:"`help` `ping`"},{name:"- Développeurs :",value:"`listemojis` (uniquement sur "+msg.guild.channels.get('685181829577572423').toString()+")"}]}});
 					} else {
 						msg.channel.send("Ce bot est celui du serveur de GoldenVal RPD du Grégoland.\nhttps://discord.gg/RjxK6Wt");
-						msg.channel.send({embed:{author:{name:"Chat Bot",icon_url:client.user.avatarURL},color:0,title:"Aide des commandes",fields:[{name:"Préfixes : `"+prefix.join("`, `")+"`",value:"Exemples : `"+prefix.join("ping` = `")+"ping`"},{name:"- Économie :",value:"`eco get | set | add | remove`"},{name:"- Jeux :",value:"`pfc pierre | feuille | ciseaux`\n`chevaux <montant>`"},{name:"- Commandes fixes (parfois aléatoires) :",value:"`"+Object.keys(data).join("` `")+"`"},{name:"- Modération",value:"`kick` `ban`"},{name:"- Commandes dynamiques :",value:"\n`help` `ping`"},{name:"- Développeurs :",value:"`listemojis` (uniquement sur RPD du Grégoland)"}]}});
+						msg.channel.send({embed:{author:{name:"Chat Bot",icon_url:client.user.avatarURL},color:0,title:"Aide des commandes",fields:[{name:"Préfixes : `"+prefix.join("`, `")+"`",value:"Exemples : `"+prefix.join("ping` = `")+"ping`"},{name:"- Hierarchie",value:"`cr` (compare role: compare les rôles de deux personnes)"},{name:"- Économie :",value:"`eco get | set | add | remove`"},{name:"- Jeux :",value:"`pfc pierre | feuille | ciseaux`\n`chevaux <montant>`"},{name:"- Commandes fixes (parfois aléatoires) :",value:"`"+Object.keys(data).join("` `")+"`"},{name:"- Modération",value:"`kick` `ban`"},{name:"- Commandes dynamiques :",value:"\n`help` `ping`"},{name:"- Développeurs :",value:"`listemojis` (uniquement sur RPD du Grégoland)"}]}});
 					}
 				} else if (scmd === "ping") {
 					msg.channel.send("Pong! :ping_pong:\nMon ping est de : `"+Math.round(client.ping)+" ms` !")
@@ -173,26 +173,50 @@ client.on('message', msg => {
 				} else if (scmd === "avatar") {
 					msg.channel.send("Your avatar :",{attachment:msg.author.avatarURL})
 				} else if (scmd === "cr") {
-					const user = msg.mentions.users.first()
+					const user = msg.mentions.users.first();
 					if (user) {
 						const msgmember = msg.guild.member(msg.author);
 						const member = msg.guild.member(user);
-						if (msg.guild.owner === msgmember) {
-							msg.channel.send("Vous êtes le propriétaire du serveur ! Par conséquent, vous avez toutes les permissions !")
-						} else if (msg.guild.owner === member) {
-							msg.channel.send(member+" est le propriétaire du serveur et a toutes les permissions !")
-						}
-						if (member) {
-							const position = msgmember.highestRole.comparePositionTo(member.highestRole);
-							if (position < 0) {
-								msg.channel.send("Vous avez un rôle inférieur à "+member+" (à "+-1*position+" rôle(s)) !");
-							} else if (position === 0) {
-								msg.channel.send("Vous avez des rôles égaux");
-							} else if (position > 0) {
-								msg.channel.send("Vous avez un rôle supérieur à "+member+" (à "+position+" rôle(s)) !")
+						if (user === msg.mentions.users.last()) {
+							if (member) {
+								if (msg.guild.owner === msgmember) {
+									msg.channel.send("Vous êtes le propriétaire du serveur ! Par conséquent, vous avez toutes les permissions !")
+								} else if (msg.guild.owner === member) {
+									msg.channel.send(member+" est le propriétaire du serveur et a toutes les permissions !")
+								}
+								const position = msgmember.highestRole.comparePositionTo(member.highestRole);
+								if (position < 0) {
+									msg.channel.send("Vous avez un rôle inférieur à "+member+" (à "+-1*position+" rôle(s)) !");
+								} else if (position === 0) {
+									msg.channel.send("Vous avez des rôles égaux");
+								} else if (position > 0) {
+									msg.channel.send("Vous avez un rôle supérieur à "+member+" (à "+position+" rôle(s)) !")
+								}
+							} else {
+								msg.channel.send("L'utilisateur n'est pas dans le serveur")
 							}
 						} else {
-							msg.channel.send("L'utilisateur n'est pas dans le serveur")
+							const user2 = msg.mentions.users.last();
+							if (user2) {
+								const member2 = msg.guild.member(user);
+								if (member2) {
+									if (msg.guild.owner === member) {
+										msg.channel.send(member+" est le propriétaire du serveur et a toutes les permissions !")
+									} else if (msg.guild.owner === member2) {
+										msg.channel.send(member2+" est le propriétaire du serveur et a toutes les permissions !")
+									}
+									const position = member2.highestRole.comparePositionTo(member.highestRole);
+									if (position < 0) {
+										msg.channel.send(member2+" a un rôle inférieur à "+member+" (à "+-1*position+" rôle(s)) !");
+									} else if (position === 0) {
+										msg.channel.send(member+" et "+member2+" des rôles égaux");
+									} else if (position > 0) {
+										msg.channel.send(member2+" a un rôle supérieur à "+member+" (à "+position+" rôle(s)) !")
+									}
+								} else {
+									msg.channel.send("Un utilisateur n'est pas dans le serveur")
+								}
+							}
 						}
 					} else {
 						msg.channel.send("Personne n'est mentionné !")
