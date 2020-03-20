@@ -169,7 +169,7 @@ client.on('message', msg => {
         console.log(e);
       }
     } else {
-      console.log(msg.author.tag+" said "+msg.content+" on '"+msg.guild.name+"'.'"+msg.channel.name+"' !");
+      console.log(msg.author.tag+" said \""+msg.content+"\" on '"+msg.guild.name+"'.'"+msg.channel.name+"' !");
     }
   } else if (msg.channel.type === "dm") {
     try {
