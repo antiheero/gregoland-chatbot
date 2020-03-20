@@ -164,7 +164,8 @@ client.on('message', msg => {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
           }
         } else if (scmd === "avatar") {
-          msg.channel.send("Your avatar : "+msg.author.avatarURL+" !")
+          const attachment = new Discord.MessageAttachment(msg.author.avatarURL);
+          msg.channel.send("Your avatar :",attachment)
         } else {
           try {
             var nb = msg.content.split(" ")[1]
