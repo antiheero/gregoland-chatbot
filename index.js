@@ -172,7 +172,7 @@ client.on('message', msg => {
 					}
 				} else if (scmd === "avatar") {
 					msg.channel.send("Your avatar :",{attachment:msg.author.avatarURL})
-				} else if (scmd === "+") {
+				} else if (scmd === "cr") {
 					const user = msg.mentions.users.first()
 					if (user) {
 						const msgmember = msg.guild.member(msg.author);
