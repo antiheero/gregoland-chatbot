@@ -7,11 +7,11 @@ module.exports = (guild,msg,cmd,scmd) => {
     if (msg.channel.type === "dm") {
       var id = msg.author.id;
       var pers = "Vous possédez : `";
-    } else if (msg.guild.members.get(cmd.split(" ")[2]) === undefined) {
-      var id = msg.author.id;
+    } else if (msg.mentions.members.first()) === undefined) {
+      var id = msg.mentions.members.first().id;
       var pers = "Vous possédez : `";
     } else {
-      var id = cmd.split(" ")[2];
+      var id = msg.mentions.members.first().id;
       var pers = "<@"+id+"> `("+id+")`"+" possède : `";
     }
     if (eco[msg.author.id] === undefined) {
@@ -26,14 +26,11 @@ module.exports = (guild,msg,cmd,scmd) => {
     if (msg.channel.type === "dm") {
       var id = msg.author.id;
       var pers = "Vous possédez : `";
-    } else if (cmd.split(" ")[2] === undefined) {
-      var id = msg.author.id;
+    } else if (msg.mentions.members.first()) === undefined) {
+      var id = msg.mentions.members.first().id;
       var pers = "Vous possédez : `";
-    } else if (msg.guild.members.get(cmd.split(" ")[2]) === undefined) {
-      var id = msg.author.id;
-      var pers = "Membre inconnu\nVous possédez : `";
     } else {
-      var id = cmd.split(" ")[2];
+      var id = msg.mentions.members.first().id;
       var pers = "<@"+id+"> `("+id+")`"+" possède : `";
     }
     if (eco[id] === undefined) {
@@ -50,11 +47,11 @@ module.exports = (guild,msg,cmd,scmd) => {
         if (msg.channel.type === "dm") {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
-        } else if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
-          var id = msg.author.id;
+        } else if (msg.mentions.members.first()) === undefined) {
+          var id = msg.mentions.members.first().id;
           var pers = "Vous possédez : `";
         } else {
-          var id = cmd.split(" ")[3];
+          var id = msg.mentions.members.first().id;
           var pers = "<@"+id+"> `("+id+")`"+" possède : `";
         }
         var ecoContents = fs.readFileSync('eco.yml', 'utf8');
@@ -86,11 +83,11 @@ module.exports = (guild,msg,cmd,scmd) => {
         if (msg.channel.type === "dm") {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
-        } else if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
-          var id = msg.author.id;
+        } else if (msg.mentions.members.first()) === undefined) {
+          var id = msg.mentions.members.first().id;
           var pers = "Vous possédez : `";
         } else {
-          var id = cmd.split(" ")[3];
+          var id = msg.mentions.members.first().id;
           var pers = "<@"+id+"> `("+id+")`"+" possède : `";
         }
         var ecoContents = fs.readFileSync('eco.yml', 'utf8');
@@ -120,11 +117,11 @@ module.exports = (guild,msg,cmd,scmd) => {
         if (msg.channel.type === "dm") {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
-        } else if (msg.guild.members.get(cmd.split(" ")[3]) === undefined) {
-          var id = msg.author.id;
+        } else if (msg.mentions.members.first()) === undefined) {
+          var id = msg.mentions.members.first().id;
           var pers = "Vous possédez : `";
         } else {
-          var id = cmd.split(" ")[3];
+          var id = msg.mentions.members.first().id;
           var pers = "<@"+id+"> `("+id+")`"+" possède : `";
         }
         var ecoContents = fs.readFileSync('eco.yml', 'utf8');
