@@ -1,9 +1,10 @@
 const PORT = process.env.PORT || 3000;
 const express = require("express");
 const app = express();
-
+const fs = require('fs');
 app.use(express.json());
 
+const indexhtml = fs.readFileSync('index.html', 'utf8');
 const courses = [
 	{ id: 1, name: "Algorithms" },
 	{ id: 2, name: "Software Engineering" },
@@ -12,7 +13,7 @@ const courses = [
 
 app.get("/", function(req, res) {
 	//when we get an http get request to the root/homepage
-	res.send("Hello World");
+	res.send(indexhtml);
 });
 
 //when we route to /courses
