@@ -39,7 +39,7 @@ client.on('messageDelete', msg => {
 })
 
 client.on('messageUpdate', (oldmsg,newmsg) => {
-  console.log("This message : \""+oldmsg.content+"\" ("+oldmsg.author.tag+") was updated to "+newmsg.content+" !")
+  console.log("This message : \""+oldmsg.content+"\" ("+oldmsg.author.tag+") was updated to \""+newmsg.content+"\" !")
 })
 
 client.on('message', msg => {
