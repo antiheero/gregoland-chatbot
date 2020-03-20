@@ -7,15 +7,15 @@ module.exports = msg => {
 			const position = msgmember.highestRole.comparePositionTo(member.highestRole);
 			if (position > 0) {
 				member
-					.kick()
+					.ban()
 					.then(() => {
-						msg.channel.send(member+" a été expulsé !");
+						msg.channel.send(member+" a été banni !");
 					})
 					.catch(err => {
-						msg.channel.send("Je suis désolé, mais je ne peux pas expulser "+member+" !")
+						msg.channel.send("Je suis désolé, mais je ne peux pas bannir "+member+" !")
 					});
 			} else {
-				msg.channel.send("Vous ne pouvez pas expulser une personne ayant un rôle supérieur au vôtre !")
+				msg.channel.send("Vous ne pouvez pas bannir une personne ayant un rôle supérieur au vôtre !")
 			}
 		} else {
 			msg.channel.send("L'utilisateur n'est pas dans le serveur")

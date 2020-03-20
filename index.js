@@ -12,6 +12,8 @@ console.log("YAML-messages loaded.");
 const ecojs = require('./eco');
 const pfc = require('./pfc');
 const chevaux = require('./chevaux');
+const kick = require('./kick');
+const ban = require('./ban');
 
 // Files
 const ymlattch = new Discord.MessageAttachment(yamlContents, "messages.yml");
@@ -83,6 +85,10 @@ client.on('message', msg => {
 					msg.reply("Ton id est : `"+msg.author.id+"` !")
 				} else if (scmd === "eco") {
 					return ecojs(guild, msg, cmd, scmd)
+                } else if (scmd === "kick") {
+                    return kick(msg)
+                } else if (scmd === "ban") {
+                    return ban(msg)
 				} else if (scmd === "pfc") {
 					return pfc(msg, cmd, scmd)
 				} else if (scmd === "chevaux") {
