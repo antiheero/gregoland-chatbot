@@ -8,7 +8,7 @@ module.exports = (guild,msg,cmd,scmd) => {
       var id = msg.author.id;
       var pers = "Vous possédez : `";
     } else if (msg.mentions.members.first() === undefined) {
-      var id = msg.mentions.members.first().id;
+      var id = msg.author.id;
       var pers = "Vous possédez : `";
     } else {
       var id = msg.mentions.members.first().id;
@@ -27,7 +27,7 @@ module.exports = (guild,msg,cmd,scmd) => {
       var id = msg.author.id;
       var pers = "Vous possédez : `";
     } else if (msg.mentions.members.first() === undefined) {
-      var id = msg.mentions.members.first().id;
+      var id = msg.author.id;
       var pers = "Vous possédez : `";
     } else {
       var id = msg.mentions.members.first().id;
@@ -48,7 +48,7 @@ module.exports = (guild,msg,cmd,scmd) => {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else if (msg.mentions.members.first() === undefined) {
-          var id = msg.mentions.members.first().id;
+          var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else {
           var id = msg.mentions.members.first().id;
@@ -84,7 +84,7 @@ module.exports = (guild,msg,cmd,scmd) => {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else if (msg.mentions.members.first() === undefined) {
-          var id = msg.mentions.members.first().id;
+          var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else {
           var id = msg.mentions.members.first().id;
@@ -118,7 +118,7 @@ module.exports = (guild,msg,cmd,scmd) => {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else if (msg.mentions.members.first() === undefined) {
-          var id = msg.mentions.members.first().id;
+          var id = msg.author.id;
           var pers = "Vous possédez : `";
         } else {
           var id = msg.mentions.members.first().id;
