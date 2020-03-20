@@ -7,7 +7,7 @@ module.exports = (guild,msg,cmd,scmd) => {
     if (msg.channel.type === "dm") {
       var id = msg.author.id;
       var pers = "Vous possédez : `";
-    } else if (msg.mentions.members.first()) === undefined) {
+    } else if (msg.mentions.members.first() === undefined) {
       var id = msg.mentions.members.first().id;
       var pers = "Vous possédez : `";
     } else {
@@ -26,7 +26,7 @@ module.exports = (guild,msg,cmd,scmd) => {
     if (msg.channel.type === "dm") {
       var id = msg.author.id;
       var pers = "Vous possédez : `";
-    } else if (msg.mentions.members.first()) === undefined) {
+    } else if (msg.mentions.members.first() === undefined) {
       var id = msg.mentions.members.first().id;
       var pers = "Vous possédez : `";
     } else {
@@ -47,7 +47,7 @@ module.exports = (guild,msg,cmd,scmd) => {
         if (msg.channel.type === "dm") {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
-        } else if (msg.mentions.members.first()) === undefined) {
+        } else if (msg.mentions.members.first() === undefined) {
           var id = msg.mentions.members.first().id;
           var pers = "Vous possédez : `";
         } else {
@@ -83,7 +83,7 @@ module.exports = (guild,msg,cmd,scmd) => {
         if (msg.channel.type === "dm") {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
-        } else if (msg.mentions.members.first()) === undefined) {
+        } else if (msg.mentions.members.first() === undefined) {
           var id = msg.mentions.members.first().id;
           var pers = "Vous possédez : `";
         } else {
@@ -117,7 +117,7 @@ module.exports = (guild,msg,cmd,scmd) => {
         if (msg.channel.type === "dm") {
           var id = msg.author.id;
           var pers = "Vous possédez : `";
-        } else if (msg.mentions.members.first()) === undefined) {
+        } else if (msg.mentions.members.first() === undefined) {
           var id = msg.mentions.members.first().id;
           var pers = "Vous possédez : `";
         } else {
