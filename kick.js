@@ -6,7 +6,7 @@ module.exports = msg => {
 		const member = msg.guild.member(user);
 		if (member) {
 			const position = msgmember.highestRole.comparePositionTo(member.highestRole);
-			if (position > 0) {
+			if (position > 0 || msg.guild.owner === msgmember) {
 				member
 					.kick()
 					.then(() => {
