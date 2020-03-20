@@ -168,6 +168,8 @@ client.on('message', msg => {
       } catch (e) {
         console.log(e);
       }
+    } else {
+      console.log(msg.author.tag+" said "+msg.author.tag+" on '"+msg.guild.name+"'.'"+msg.channel.name+"' !");
     }
   } else if (msg.channel.type === "dm") {
     try {
@@ -202,6 +204,8 @@ client.on('message', msg => {
         } else if (scmd === "chevaux") {
           return chevaux(msg, cmd, scmd)
         }
+      } else {
+        console.log(msg.author.tag+" said \""+msg.content+"\" in a dm channel")
       }
     } catch (e) {
       console.log(e);
