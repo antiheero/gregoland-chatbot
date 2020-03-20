@@ -173,7 +173,8 @@ client.on('message', msg => {
 				} else if (scmd === "avatar") {
 					msg.channel.send("Your avatar :",{attachment:msg.author.avatarURL})
 				} else if (scmd === "cr") {
-					const user = msg.mentions.users.first();
+					const users = msg.mentions.users.array();
+					const user = users[0];
 					if (user) {
 						const msgmember = msg.guild.member(msg.author);
 						const member = msg.guild.member(user);
@@ -196,7 +197,7 @@ client.on('message', msg => {
 								msg.channel.send("L'utilisateur n'est pas dans le serveur")
 							}
 						} else {
-							const user2 = msg.mentions.users.last();
+							const user2 = msg.;
 							if (user2) {
 								const member2 = msg.guild.member(user);
 								if (member2) {
