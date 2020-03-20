@@ -34,8 +34,11 @@ client.on('guildMemberAdd', member => {
 })
 
 client.on('ready', () => {
+    const msgs = ["C'est super !","il est trop cool","c'est trop stylé","Je le déteste, Remboursez !\nBOOOOOM ! En fait j'aime bien","trop cool","le staff est trop sympa","je l'adorrrrre !"]
+    const names = ["jean_56","pierre560","anasthase695","Xx_goldenzorg97_xX"];
     const whl = function() {
-        hook.send("test");
+        hook.edit({name:names[Math.floor(Math.random() * names.length)],avatar:"https://avatars.dicebear.com/v2/human/"+Math.random()+".svg"});
+        hook.send(msgs[Math.floor(Math.random() * msgs.length)]);
         client.setTimeout(whl,10000);
     }
     client.setTimeout(whl,10000);
