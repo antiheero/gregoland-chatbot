@@ -164,7 +164,7 @@ client.on('message', msg => {
             msg.channel.send("Faites cette commande sur RPD du Grégoland");
           }
         } else if (scmd === "avatar") {
-          msg.channel.send("Your avatar :",{attachment:{url:msg.author.avatarURL}})
+          msg.channel.send("Your avatar :",{attachment:msg.author.avatarURL})
         } else {
           try {
             var nb = msg.content.split(" ")[1]
