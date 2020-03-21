@@ -16,8 +16,22 @@ app.get("/", function(req, res) {
 	res.send(indexhtml);
 });
 app.use('/api/discord', require('./api/discord'));
+app.use((err, req, res, next) => {
+	switch (err.message) {
+		case 'NoCodeProvided':
+			return res.status(400).send({
+				status: 'ERROR',
+				error: err.message,
+			});
+		default:
+			return res.status(500).send({
+				status: 'ERROR',
+				error: err.message,
+			});
+	}
+});
 app.get('*', function(req, res){
-  res.status(404).send(html404);
+	res.status(404).send(html404);
 });
 app.listen(PORT, function() {
 	console.log(`Listening on Port ${PORT}`);
