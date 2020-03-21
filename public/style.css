@@ -28,6 +28,16 @@
 	font-weight: 900;
 	src: url("whitney/whitney-black.otf") format("opentype");
 }
+
+.pub {
+	width: 100%;
+	margin: 20px;
+	background-color: white;
+	color: black;
+	padding: 30px;
+	height: 200px;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
 	background-color: #101010;
