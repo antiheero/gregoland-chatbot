@@ -1,4 +1,75 @@
+@font-face {
+	font-family: "whitney";
+	font-weight: 300;
+	src: url("whitney/whitney-light.otf") format("opentype");
+}
+@font-face {
+	font-family: "whitney";
+	font-weight: 400;
+	src: url("whitney/whitney-book.otf") format("opentype");
+}
+@font-face {
+	font-family: "whitney";
+	font-weight: 500;
+	src: url("whitney/whitney-medium.otf") format("opentype");
+}
+@font-face {
+	font-family: "whitney";
+	font-weight: 600;
+	src: url("whitney/whitney-semibold.otf") format("opentype");
+}
+@font-face {
+	font-family: "whitney";
+	font-weight: 700;
+	src: url("whitney/whitney-bold.otf") format("opentype");
+}
+@font-face {
+	font-family: "whitney";
+	font-weight: 900;
+	src: url("whitney/whitney-black.otf") format("opentype");
+}
+
+.button {
+	font-family: whitney;
+	font-weight: 500;
+	background-color: DodgerBlue;
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	border: 2px solid DodgerBlue;
+	border-radius: 5px;
+	transition-duration: 0.4s;
+}
+
+.button:hover {
+	transition-duration: 0.1s;
+	background-color: DeepSkyBlue;
+	border: 2px solid DeepSkyBlue;
+}
+
+.button:active {
+	border: 2px solid DodgerBlue;
+	background-color: black;
+}
+
+.semibold {
+	font-family: whitney;
+	font-weight: 600;
+}
 body {
 	background-color: #1a1a1a;
 	color: #ffffff;
+	font-family: whitney;
+}
+h1 {
+	background-color: #1a1a1a;
+	color: #ffffff;
+	font-family: whitney;
+	font-weight: "bold";
+	font-size: 36px;
+	line-height: 44px;
 }
