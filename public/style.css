@@ -42,7 +42,7 @@ td, th {
 	color: white;
 	border: none;
 	text-align: left;
-	padding: 30px;
+	padding: 8px;
 }
 
 tr:nth-child(even) {
