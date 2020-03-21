@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const CLIENT_ID = process.env.CLIENT_ID;
