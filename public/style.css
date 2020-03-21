@@ -132,3 +132,11 @@ h1 {
 	font-size: 36px;
 	line-height: 44px;
 }
+h2 {
+	background-color: #1a1a1a;
+	color: #ffffff;
+	font-family: whitney;
+	font-weight: "bold";
+	font-size: 30px;
+	line-height: 26px;
+}
