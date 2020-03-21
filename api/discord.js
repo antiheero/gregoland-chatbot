@@ -1,7 +1,6 @@
+require('dotenv').config();
 const express = require('express');
-
 const router = express.Router();
-
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const redirect = encodeURIComponent('https://gregoland-chatbot.herokuapp.com/api/discord/callback');
