@@ -45,6 +45,13 @@
 	transition-duration: 0.4s;
 }
 
+*, *::after, *::before {
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+	cursor: default;
+}
+
 .button:hover {
 	transition-duration: 0.1s;
 	background-color: DeepSkyBlue;
