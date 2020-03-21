@@ -32,6 +32,7 @@
 .pub {
 	width: 100%;
 	background-color: white;
+	margin-top: 20px;
 	color: black;
 	padding: 30px;
 	height: 120px;
