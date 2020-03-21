@@ -34,20 +34,19 @@
 	overflow: hidden;
 }
 table {
-	font-family: arial, sans-serif;
-	border-collapse: collapse;
+	font-family: whitney;
 	width: 100%;
 }
 
 td, th {
 	color: white;
-	border: 1px solid #222222;
+	border: none;
 	text-align: left;
 	padding: 8px;
 }
 
 tr:nth-child(even) {
-	background-color: #222222;
+	background-color: #101010;
 }
 tr:nth-child(even) {
 	background-color: #111111;
