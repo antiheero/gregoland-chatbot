@@ -51,7 +51,8 @@
 	font-family: "whitney";
 	font-weight: 900;
 	color: black;
-	font-size: 50;
+	font-size: 5em;
+	text-align: center;
 }
 /* Add a black background color to the top navigation */
 .topnav {
