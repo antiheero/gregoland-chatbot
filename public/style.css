@@ -118,35 +118,7 @@ tr:nth-child(even) {
 tr:nth-child(even) {
 	background-color: #111111;
 }
-/* Style the links inside the navigation bar */
-.topnav a,button {
-	background-color: #111;
-	float: left;
-	color: #fff;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 17px;
-}
-.topnav a,button.right {
-	background-color: #111;
-	float: right;
-	color: #fff;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 17px;
-}
-/* Change the color of links on hover */
-.topnav a,button:hover {
-	background-color: #222;
-}
 
-/* Add a color to the active/current link */
-.topnav a,button.active {
-	background-color: DodgerBlue;
-	color: white;
-}
 .button {
 	font-family: whitney;
 	font-weight: 500;
