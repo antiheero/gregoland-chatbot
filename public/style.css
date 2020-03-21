@@ -33,7 +33,25 @@
 	background-color: #101010;
 	overflow: hidden;
 }
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
 
+td, th {
+	color: white;
+	border: 1px solid #222222;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #222222;
+}
+tr:nth-child(even) {
+	background-color: #111111;
+}
 /* Style the links inside the navigation bar */
 .topnav a {
 	background-color: #111;
