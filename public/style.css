@@ -39,6 +39,11 @@
 	cursor: pointer;
 }
 
+.burn {
+	width: 120px;
+	height: 120px;
+	cursor: pointer;
+}
 /* Add a black background color to the top navigation */
 .topnav {
 	background-color: #101010;
