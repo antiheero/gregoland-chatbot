@@ -15,6 +15,7 @@ app.get("/", function(req, res) {
 	//when we get an http get request to the root/homepage
 	res.send(indexhtml);
 });
+app.use('/api/discord', require('./api/discord'));
 app.get('*', function(req, res){
   res.status(404).send(html404);
 });

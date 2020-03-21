@@ -178,7 +178,7 @@ client.on('message', msg => {
 					if (user) {
 						const msgmember = msg.guild.member(msg.author);
 						const member = msg.guild.member(user);
-						if (user === msg.mentions.users.last()) {
+						if (users.length === 1) {
 							if (member) {
 								if (msg.guild.owner === msgmember) {
 									msg.channel.send("Vous êtes le propriétaire du serveur ! Par conséquent, vous avez toutes les permissions !")
@@ -197,9 +197,9 @@ client.on('message', msg => {
 								msg.channel.send("L'utilisateur n'est pas dans le serveur")
 							}
 						} else {
-							const user2 = msg.;
+							const user2 = users[1];
 							if (user2) {
-								const member2 = msg.guild.member(user);
+								const member2 = msg.guild.member(user2);
 								if (member2) {
 									if (msg.guild.owner === member) {
 										msg.channel.send(member+" est le propriétaire du serveur et a toutes les permissions !")
