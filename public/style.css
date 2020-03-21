@@ -44,6 +44,7 @@
 	height: 120px;
 	cursor: pointer;
 	display: inline-block;
+	text-decoration: none;
 }
 
 .pubtext {
@@ -52,8 +53,9 @@
 	font-weight: 900;
 	color: black;
 	font-size: 4em;
-	text-align: center;
-	margin: auto;
+	text-align: right;
+	margin-top: auto;
+	cursor: pointer;
 }
 /* Add a black background color to the top navigation */
 .topnav {
