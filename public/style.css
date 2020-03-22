@@ -80,6 +80,8 @@ tr:nth-child(even) {
 tr:nth-child(even) {
 	background-color: #111111;
 }
+a {text-decoration: none;}
+
 /* Style the links inside the navigation bar */
 .topnav a {
 	background-color: #111;
