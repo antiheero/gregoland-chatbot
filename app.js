@@ -20,6 +20,7 @@ app.get("/", function(req, res) {
 	res.send(indexhtml);
 });
 app.use('/api/discord', require('./api/discord'));
+app.use('/api/botregister', require('./api/botregister'));
 app.use((err, req, res, next) => {
 	switch (err.message) {
 		case 'NoCodeProvided':
