@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const { catchAsync } = require('../utils');
+const { catchAsync } = require('./utils');
 const router = express.Router();
 
 router.get('/my', catchAsync(async (req, res) => {
