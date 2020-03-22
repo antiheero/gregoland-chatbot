@@ -22,13 +22,17 @@ router.get('/callback', catchAsync(async (req, res) => {
 			},
 		});
 	const json = await response.json();
-	res
-		.status(201)
-		.cookie('auth', `Bearer ${json.access_token}`, {
-			expires: new Date(Date.now() + 8 * 3600000) // cookie will be removed after 8 hours
-		})
-	console.log(req.cookie)
-	res
-		.redirect(301, `/my`);
+	const fetchDiscordUserInfo = await fetch('http://discordapp.com/api/users/@me', {
+		headers: {
+			Authorization: `Bearer ${json.access_token}`,
+		}
+	});
+	const userInfo = await fetchDiscordUserInfo.json();
+
+	yourUserId = `${userInfo.id}`;
+	yourUserName = `${userInfo.username}`;
+
+	// or simply...
+	console.log(userInfo);
 }));
 module.exports = router;
