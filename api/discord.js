@@ -1,4 +1,3 @@
-const PORT = process.env.PORT || 3000;
 const express = require('express');
 const fetch = require('node-fetch');
 const btoa = require('btoa');
@@ -36,16 +35,6 @@ router.get('/callback', catchAsync(async (req, res) => {
 		}
 	});
 	const guildsInfo = await fetchDiscordGuildsInfo.json();
-	axios.post(`localhost:${PORT}/my`,{
-		user: userInfo,
-		guilds: guildsInfo
-	})
-	.then((res) => {
-		console.log(`statusCode: ${res.statusCode}`);
-		console.log(res)
-	})
-	.catch((error) => {
-		console.error(error)
-	})
+	res.send(userInfo)
 }));
 module.exports = router;
