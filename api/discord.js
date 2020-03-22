@@ -29,7 +29,7 @@ router.get('/callback', catchAsync(async (req, res) => {
 	});
 	const userInfo = await fetchDiscordUserInfo.json();
 	console.log(userInfo);
-	const fetchDiscordGuildsInfo = await fetch('http://discordapp.com/api/guilds/@me', {
+	const fetchDiscordGuildsInfo = await fetch('http://discordapp.com/api/users/@me/guilds', {
 		headers: {
 			Authorization: `Bearer ${json.access_token}`,
 		}
