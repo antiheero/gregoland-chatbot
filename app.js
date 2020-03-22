@@ -11,11 +11,18 @@ app.use(favicon('/public/favicon.ico'));
 const indexhtml = fs.readFileSync('public/index.html', 'utf8');
 const html404 = fs.readFileSync('public/404.html', 'utf8');
 
+app.post("/", function(req, res) {
+	console.log('receiving data ...');
+	console.log('body is ',req.body);
+	res.send(req.body);
+});
+
 app.get("/", function(req, res) {
 	//when we get an http get request to the root/homepage
 	res.send(indexhtml);
 });
 app.use('/api/discord', require('./api/discord'));
+app.use('/my', require('./my'));
 app.use((err, req, res, next) => {
 	switch (err.message) {
 		case 'NoCodeProvided':
