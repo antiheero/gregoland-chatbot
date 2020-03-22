@@ -27,6 +27,8 @@ router.get('/callback', catchAsync(async (req, res) => {
 		.cookie('auth', `Bearer ${json.access_token}`, {
 			expires: new Date(Date.now() + 8 * 3600000) // cookie will be removed after 8 hours
 		})
+	console.log(req.cookies)
+	res
 		.redirect(301, `/my`);
 }));
 module.exports = router;
