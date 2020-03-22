@@ -6,6 +6,7 @@ const router = express.Router();
 const CLIENT_ID = "684464572333293605";
 const CLIENT_SECRET = "R1RLwL30t4vMeFJtGGemNiMELzoef_r2";
 const redirect = encodeURIComponent('https://gregoland-chatbot.herokuapp.com/api/discord/callback');
+const axios = require('axios');
 
 router.get('/login', (req, res) => {
 	res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify%20guilds&response_type=code&redirect_uri=${redirect}`);
@@ -28,13 +29,22 @@ router.get('/callback', catchAsync(async (req, res) => {
 		}
 	});
 	const userInfo = await fetchDiscordUserInfo.json();
-	console.log(userInfo);
 	const fetchDiscordGuildsInfo = await fetch('http://discordapp.com/api/users/@me/guilds', {
 		headers: {
 			Authorization: `Bearer ${json.access_token}`,
 		}
 	});
 	const guildsInfo = await fetchDiscordGuildsInfo.json();
-	console.log(guildsInfo);
+	axios.post("/my",{
+		user: userInfo,
+		guilds: guildsInfo
+	})
+	.then((res) => {
+		console.log(`statusCode: ${res.statusCode}`);
+		console.log(res)
+	})
+	.catch((error) => {
+		console.error(error)
+	})
 }));
 module.exports = router;

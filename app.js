@@ -11,6 +11,10 @@ app.use(favicon('/public/favicon.ico'));
 const indexhtml = fs.readFileSync('public/index.html', 'utf8');
 const html404 = fs.readFileSync('public/404.html', 'utf8');
 
+app.post("/my", function(req, res) {
+	res.send(req.body)
+});
+
 app.get("/", function(req, res) {
 	//when we get an http get request to the root/homepage
 	res.send(indexhtml);
