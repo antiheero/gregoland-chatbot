@@ -34,7 +34,7 @@ router.get('/callback', catchAsync(async (req, res) => {
 			Authorization: `Bearer ${json.access_token}`,
 		}
 	});
-	const guildsInfo = await fetchDiscordGuildsInfo.json();
+	userInfo.guilds = await fetchDiscordGuildsInfo.json();
 	res.send(userInfo)
 }));
 module.exports = router;
