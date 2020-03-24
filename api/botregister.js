@@ -8,7 +8,7 @@ const CLIENT_SECRET = "R1RLwL30t4vMeFJtGGemNiMELzoef_r2";
 const redirect = encodeURIComponent('https://gregoland-chatbot.herokuapp.com/api/botregister/callback');
 
 router.get('/login', (req, res) => {
-	res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=bot%identify&response_type=code&redirect_uri=${redirect}`);
+	res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=bot%20identify&response_type=code&redirect_uri=${redirect}`);
 });
 router.get('/callback', catchAsync(async (req, res) => {
 	if (!req.query.code) throw new Error('NoCodeProvided');
