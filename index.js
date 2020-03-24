@@ -64,6 +64,7 @@ client.on('message', msg => {
 						msg.channel.send("Cette commande doit être impérativement effectuée sur ce serveur : https://discord.gg/RjxK6Wt")
 					}
 				} else if (scmd === "help") {
+					return help(client,prefix,msg)
 				} else if (scmd === "ping") {
 					msg.channel.send("Pong! :ping_pong:\nMon ping est de : `"+Math.round(client.ping)+" ms` !")
 				} else if (scmd === "an") {
