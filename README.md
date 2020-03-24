@@ -6,10 +6,10 @@ Globalement, c'est un bot discord que l'on peut intégrer à un serveur. Il poss
 Bah, c'est moi qui l'ai fait, c'est mon mien à moi que j'ai fait **moi-même**
 
 ## Quelles sont ses fonctions ?
-[X] Module d'économie
-[X] Module de modération (fonctions !kick et !ban)
-[ ] Module de cafetière, sérieusement, vous vous attendiez à quoi ?
-[X] Module de pari sur des chevaux virtuels !
-[X] Module de Pierre-feuille-ciseaux
-[X] Module d'anonymisation des messages à deux niveaux (!an et !an+)
-[ ] Module de théière ! C'est énervant à chaque fois, pas de café, pas de thé non plus !
+- [X] Module d'économie
+- [X] Module de modération (fonctions !kick et !ban)
+- [ ] Module de cafetière, sérieusement, vous vous attendiez à quoi ?
+- [X] Module de pari sur des chevaux virtuels !
+- [X] Module de Pierre-feuille-ciseaux
+- [X] Module d'anonymisation des messages à deux niveaux (!an et !an+)
+- [ ] Module de théière ! C'est énervant à chaque fois, pas de café, pas de thé non plus !
