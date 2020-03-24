@@ -4,6 +4,7 @@ const app = express();
 const fs = require('fs');
 const favicon = require('express-favicon');
 app.use(express.json());
+app.set("view engine", "ejs");
 
 app.use(express.static('public'));
 app.use(favicon('/public/favicon.ico'));
@@ -11,8 +12,8 @@ app.use(favicon('/public/favicon.ico'));
 const indexhtml = fs.readFileSync('public/index.html', 'utf8');
 const html404 = fs.readFileSync('public/404.html', 'utf8');
 
-app.post("/my", function(req, res) {
-	res.send(req.body)
+app.get("/my", function(req, res) {
+	res.render("pages/my")
 });
 
 app.get("/", function(req, res) {
