@@ -13,7 +13,7 @@ const indexhtml = fs.readFileSync('public/index.html', 'utf8');
 const html404 = fs.readFileSync('public/404.html', 'utf8');
 
 app.get("/my", function(req, res) {
-	res.render("pages/my")
+	res.render("pages/index")
 });
 
 app.get("/", function(req, res) {
