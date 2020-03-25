@@ -35,7 +35,6 @@ client.on('guildMemberAdd', member => {
 })
 
 client.on('ready', () => {
-	client.user.setUsername(process.env.BOT_USERNAME);
     console.log(`Logged in as ${client.user.tag}!`);
 })
 
