@@ -8,7 +8,7 @@ Bah, c'est moi qui l'ai fait, c'est mon mien à moi que j'ai fait **moi-même**
 ## Quelles sont ses fonctions ?
 - [X] Module d'économie
 - [X] Module de modération (fonctions !kick et !ban)
-- [ ] Module de filtrations des vulgarités (on peut y bossez)
+- [ ] Module de filtrations des vulgarités (on peut y bosser)
 - [X] Module de pari sur des chevaux virtuels !
 - [X] Module de Pierre-feuille-ciseaux
 - [X] Module d'anonymisation des messages à deux niveaux (!an et !an+)
