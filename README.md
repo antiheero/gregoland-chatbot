@@ -14,3 +14,4 @@ Côme, si tu passes par là, ce sera le nôtre à nous que nous aurons fait **no
 - [X] Module de pari sur des chevaux virtuels !
 - [X] Module de Pierre-feuille-ciseaux
 - [X] Module d'anonymisation des messages à deux niveaux (!an et !an+)
+- [ ] Module de cafetière
