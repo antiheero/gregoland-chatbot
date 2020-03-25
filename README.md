@@ -28,7 +28,7 @@ Tutoriel pas-à-pas en 20 étapes :
 1. Allez sur [le portail développeur de Discord](https://discordapp.com/developers/).
 2. Créez une application (New Application).
 3. Éditez les informations (personnalisez le bot avec un nom, un avatar).
-4. Mettez en lieu sûr les valeurs "Client ID" et "Client Secret"
+4. Mettez en lieu sûr les valeurs "Client ID" et "Client Secret".
 5. Dans l'onglet OAuth2, sélectionnez "Bot" et ouvrez l'url donnée.
 6. Ajoutez votre bot a serveur.
 7. Dans l'onglet Bot, cliquez sur "Add Bot".
@@ -40,9 +40,9 @@ Tutoriel pas-à-pas en 20 étapes :
 13. Déployez l'application.
 14. Dans l'onglet "Resources", activez "worker".
 15. Configurez les secrets dans l'onglet "Settings" :
-    - BOT_TOKEN : le token que vous avez mis en lieu sûr
-    - CLIENT_ID : l'identifiant que vous avez mis en lieu sûr
-    - CLIENT_SECRET : la dernière valeur que vous avez mis en lieu sûr
+    - BOT_TOKEN : le token que vous avez mis en lieu sûr;
+    - CLIENT_ID : l'identifiant que vous avez mis en lieu sûr;
+    - CLIENT_SECRET : la dernière valeur que vous avez mis en lieu sûr.
 16. Validez.
 17. Retournez sur Discord.
 18. Attribuez un rôle au bot.
