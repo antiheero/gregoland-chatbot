@@ -5,7 +5,7 @@ Globalement, c'est un bot discord que l'on peut intégrer à un serveur. Il poss
 ## Qu'a-t-il de plus qu'un autre bot discord ?
 Bah, c'est moi qui l'ai fait, c'est mon mien à moi que j'ai fait **moi-même**.
 
-Côme, si tu passes par là, ce sera le nôtre à nous que nous aurons fait __**nous-même**__
+Côme, si tu passes par là, ce sera le nôtre à nous que nous aurons fait **__nous-même__**
 
 ## Quelles sont ses fonctions ?
 - [X] Module d'économie
