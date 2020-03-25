@@ -23,3 +23,22 @@ Sinon, vous pouvez cloner le répertoire, mais il y a quelques variables d'envir
 - BOT_TOKEN
 - CLIENT_ID
 - CLIENT_SECRET
+
+Tutoriel pas-à-pas :
+1. Allez sur [le portail développeur de Discord](https://discordapp.com/developers/).
+2. Créez une application (New Application).
+3. Éditez les informations (personnalisez le bot avec un nom, un avatar).
+4. Mettez en lieu sûr les valeurs "Client ID" et "Client Secret"
+5. Dans l'onglet OAuth2, sélectionnez "Bot" et copiez l'url donnée.
+6. Dans l'onglet Bot, cliquez sur "Add Bot".
+7. Cliquez sur "Copy" dans la partie TOKEN.
+8. Notez-le dans un endroit sûr.
+9. Créez un compte ou connectez-vous sur [Heroku](heroku.com).
+10. Créez une application.
+11. Dans l'onglet "Deploy", liez votre application à Github et précisez ce répertoire.
+12. Déployez l'application.
+13. Dans l'onglet "Resources", activez "worker".
+14. Configurez les secrets dans l'onglet "Settings" :
+    * BOT_TOKEN : le token que vous avez mis en lieu sûr
+    * CLIENT_ID : l'identifiant que vous avez mis en lieu sûr
+    * CLIENT_SECRET : la dernière valeur que vous avez mis en lieu sûr
