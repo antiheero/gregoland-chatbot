@@ -2,6 +2,8 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const BOT_TOKEN = process.env.BOT_TOKEN;
+console.log("Logging in with this token :'"+BOT_TOKEN+"' !")
 
 const prefix = ["!", "/"];
 const yamlContents = fs.readFileSync('messages.yml', 'utf8');
@@ -274,4 +276,4 @@ client.on('message', msg => {
 	}
 })
 
-client.login(process.env.BOT_TOKEN);
+client.login(BOT_TOKEN);
