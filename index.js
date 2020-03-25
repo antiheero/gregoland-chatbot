@@ -3,7 +3,7 @@ const yaml = require('js-yaml');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const BOT_TOKEN = process.env.BOT_TOKEN;
-console.log("Logging in with this token :'"+BOT_TOKEN+"' !")
+console.log("Logging in with this token : \""+BOT_TOKEN+"\" !")
 
 const prefix = ["!", "/"];
 const yamlContents = fs.readFileSync('messages.yml', 'utf8');
@@ -35,6 +35,7 @@ client.on('guildMemberAdd', member => {
 })
 
 client.on('ready', () => {
+	client.user.setUsername(process.env.BOT_USERNAME);
     console.log(`Logged in as ${client.user.tag}!`);
 })
 
