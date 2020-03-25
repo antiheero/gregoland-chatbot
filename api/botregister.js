@@ -3,8 +3,8 @@ const fetch = require('node-fetch');
 const btoa = require('btoa');
 const { catchAsync } = require('../utils');
 const router = express.Router();
-const CLIENT_ID = "684464572333293605";
-const CLIENT_SECRET = "R1RLwL30t4vMeFJtGGemNiMELzoef_r2";
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const redirect = encodeURIComponent('https://gregoland-chatbot.herokuapp.com/api/botregister/callback');
 
 router.get('/login', (req, res) => {
