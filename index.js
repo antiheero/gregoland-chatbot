@@ -35,7 +35,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('messageReactionAdd', (messageReaction,user) => {
 	const guild = client.guilds.get("681549703212564547");
-	if (messageReaction.message.guild === "681549703212564547" && messageReaction.message.id === "693515650873819226") {
+	if (messageReaction.message.guild === "681549703212564547" && messageReaction.message.id === "693541563330199583") {
 		const member = guild.member(user);
 		member.addRole("681556751509880889")
 		if (messageReaction.emoji.toString() === "🇦") {
