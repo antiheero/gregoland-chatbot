@@ -27,19 +27,25 @@ client.on('guildMemberAdd', member => {
 		`Bienvenue sur le serveur <@${member.user.id}> !`
 	);
 	if (member.guild.id === "681549703212564547") {
-		member.send("Vive le Parti unique !\nAu passage, il t'a accordé le rôle de Citoyen d'honneur !\nFinallement, le Parti t'accorde 100 ₲ ! Pour les recevoir, fais : ```\n!eco\n```");
-		member.addRole("681556751509880889");
+		member.send("Vive le Parti unique !\nVa dans le salon de bienvenue pour recevoir ton rôle !\nFinallement, le Parti t'accorde 100 ₲ ! Pour les recevoir, fais : ```\n!eco\n```");
 	} else if (member.guild.id === "689476199172407440") {
 		member.addRole("689477316744970363");
 	}
 })
 
 client.on('messageReactionAdd', (messageReaction,user) => {
-	messageReaction.message.reply("Vous avez réagi avec ce message")
-})
-
-client.on('messageReactionRemove', (messageReaction,user) => {
-	messageReaction.message.reply("Vous avez réagi avec ce message")
+	const guild = client.guilds.get("681549703212564547");
+	if (messageReaction.message.guild === "681549703212564547" && messageReaction.message.id === "693515650873819226") {
+		const member = guild.member(user);
+		member.addRole("681556751509880889")
+		if (messageReaction.emoji.toString() === "🇦") {
+			member.addRole("686214959168094208")
+		} else if (messageReaction.emoji.toString() === "🇧") {
+			member.addRole("686214873507823655")
+		} else if (messageReaction.emoji.toString() === "🇨") {
+			member.addRole("693530176469991505")
+		} else 
+	}
 })
 
 client.on('ready', () => {
