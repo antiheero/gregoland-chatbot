@@ -44,7 +44,7 @@ client.on('messageReactionAdd', (messageReaction,user) => {
 			member.addRole("686214873507823655")
 		} else if (messageReaction.emoji.toString() === "🇨") {
 			member.addRole("693530176469991505")
-		} else 
+		}
 	}
 })
 
