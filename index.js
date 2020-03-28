@@ -35,15 +35,20 @@ client.on('guildMemberAdd', member => {
 
 client.on('messageReactionAdd', (messageReaction,user) => {
 	const guild = client.guilds.get("681549703212564547");
+	console.log(">1");
 	if (messageReaction.message.guild === "681549703212564547" && messageReaction.message.id === "693541563330199583") {
 		const member = guild.member(user);
-		member.addRole("681556751509880889")
+		member.addRole("681556751509880889");
+		console.log(">2");
 		if (messageReaction.emoji.toString() === "🇦") {
-			member.addRole("686214959168094208")
+			member.addRole("686214959168094208");
+			console.log(">3");
 		} else if (messageReaction.emoji.toString() === "🇧") {
-			member.addRole("686214873507823655")
+			member.addRole("686214873507823655");
+			console.log(">3");
 		} else if (messageReaction.emoji.toString() === "🇨") {
-			member.addRole("693530176469991505")
+			member.addRole("693530176469991505");
+			console.log(">3");
 		}
 	}
 })
