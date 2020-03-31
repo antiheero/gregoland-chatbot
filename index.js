@@ -90,7 +90,7 @@ client.on('message', msg => {
 				} else if (scmd === "id") {
 					msg.reply("Ton id est : `"+msg.author.id+"` !")
 				} else if (scmd === "eco") {
-					return ecojs(guild, msg, cmd, scmd)
+					return ecojs(msg, cmd, scmd)
 				} else if (scmd === "kick") {
 					return kick(msg)
 				} else if (scmd === "ban") {
@@ -176,7 +176,7 @@ client.on('message', msg => {
 						msg.channel.send("Faites cette commande sur RPD du Grégoland");
 					}
 				} else if (scmd === "avatar") {
-					msg.channel.send("Your avatar :",{attachment:msg.author.avatarURL})
+					msg.channel.send("Your avatar :",{files:[msg.author.avatarURL]})
 				} else if (scmd === "cr") {
 					const users = msg.mentions.users.array();
 					const user = users[0];
