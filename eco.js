@@ -107,7 +107,7 @@ module.exports = (msg,cmd,scmd) => {
 				msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
 			}
 		} else {
-			msg.channel.send("Petit malin ! Tu n'as pas la permission\nEn effet, il te manque le rôle 'Banquier Central' :dollar:");
+			msg.channel.send("Petit malin ! Tu n'as pas la permission");
 		}
 	} else if (cmd.split(" ")[1] === "remove") {
 		if (msg.guild.member(msg.author.id).hasPermission(8)) {
@@ -140,6 +140,8 @@ module.exports = (msg,cmd,scmd) => {
 							
 			msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
 			}
+		} else {
+			msg.channel.send("Petit malin ! Tu n'as pas la permission");
 		}
 	}
 }
