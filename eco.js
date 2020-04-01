@@ -1,9 +1,8 @@
 const fs = require('fs');
-const yaml = require('js-yaml');
 module.exports = (msg,cmd,scmd) => {
 	if (cmd.split(" ")[1] === undefined) {
-		var ecoContents = fs.readFileSync('eco.yml', 'utf8');
-		var eco = yaml.safeLoad(ecoContents);
+		var ecoContents = fs.readFileSync('eco.json', 'utf8');
+		var eco = JSON.parse(ecoContents);
 		if (msg.channel.type === "dm") {
 			var id = msg.author.id;
 			var pers = "Vous possédez : `";
@@ -14,15 +13,15 @@ module.exports = (msg,cmd,scmd) => {
 			var id = msg.mentions.members.first().id;
 			var pers = "<@"+id+"> `("+id+")`"+" possède : `";
 		}
-		if (eco[msg.author.id] === undefined) {
-			eco[msg.author.id] = {money: eco.setup.base};
-			let ecoyaml = yaml.safeDump(eco);
-			fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+		if (eco[msg.guild.id][id] === undefined) {
+			eco[msg.guild.id][msg.author.id] = {money: eco.setup.base};
+			let ecojson = JSON.stringify(eco);
+			fs.writeFileSync('eco.json', ecojson, 'utf8');
 		}
-		msg.channel.send(pers+eco[msg.author.id].money+" "+eco.setup.devise+"` !");
+		msg.channel.send(pers+eco[msg.guild.id][msg.author.id].money+" "+eco.setup.devise+"` !");
 	} else if (cmd.split(" ")[1] === "get") {
-		var ecoContents = fs.readFileSync('eco.yml', 'utf8');
-		var eco = yaml.safeLoad(ecoContents);
+		var ecoContents = fs.readFileSync('eco.json', 'utf8');
+		var eco = JSON.parse(ecoContents);
 		if (msg.channel.type === "dm") {
 			var id = msg.author.id;
 			var pers = "Vous possédez : `";
@@ -33,15 +32,17 @@ module.exports = (msg,cmd,scmd) => {
 			var id = msg.mentions.members.first().id;
 			var pers = "<@"+id+"> `("+id+")`"+" possède : `";
 		}
-		if (eco[id] === undefined) {
-			eco[id] = {money: eco.setup.base};
-			let ecoyaml = yaml.safeDump(eco);
-			fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+		if (eco[msg.guild.id][id] === undefined) {
+			eco[msg.guild.id][msg.author.id] = {money: eco.setup.base};
+			let ecojson = JSON.stringify(eco);
+			fs.writeFileSync('eco.json', ecojson, 'utf8');
 		}
-		msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
+		msg.channel.send(pers+eco[msg.guild.id][msg.author.id].money+" "+eco.setup.devise+"` !");
 	} else if (cmd.split(" ")[1] === "add") {
 		if (msg.guild.member(msg.author.id).hasPermission(8)) {
-			if (parseInt(cmd.split(" ")[2]) === NaN) {
+			if (cmd.split(" ")[2] === undefined) {
+				msg.channel.send("Veuillez préciser un nombre !")
+			} else if (parseInt(cmd.split(" ")[2]) === NaN) {
 				msg.channel.send("Ce n'est pas un nombre !")
 			} else {
 				if (msg.channel.type === "dm") {
@@ -54,21 +55,21 @@ module.exports = (msg,cmd,scmd) => {
 					var id = msg.mentions.members.first().id;
 					var pers = "<@"+id+"> `("+id+")`"+" possède : `";
 				}
-				var ecoContents = fs.readFileSync('eco.yml', 'utf8');
-				var eco = yaml.safeLoad(ecoContents);
-				if (eco[id] === undefined) {
-					eco[id] = {money: parseInt(cmd.split(" ")[2])};
-					let ecoyaml = yaml.safeDump(eco);
-					fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+				var ecoContents = fs.readFileSync('eco.json', 'utf8');
+				var eco = JSON.parse(ecoContents);
+				if (eco[msg.guild.id][id] === undefined) {
+					eco[msg.guild.id][id] = {money: eco.setup.base+parseInt(cmd.split(" ")[2])};
+					let ecojson = JSON.stringify(eco);
+					fs.writeFileSync('eco.json', ecojson, 'utf8');
 				} else {
-					eco[id].money += parseInt(cmd.split(" ")[2]);
-					let ecoyaml = yaml.safeDump(eco);
-					fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+					eco[msg.guild.id][id].money += parseInt(cmd.split(" ")[2]);
+					let ecojson = JSON.stringify(eco);
+					fs.writeFileSync('eco.json', ecojson, 'utf8');
 				}
 				var ecoContents = fs.readFileSync('eco.yml', 'utf8');
-				var eco = yaml.safeLoad(ecoContents);
-						 
-				msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
+				var eco = JSON.parse(ecoContents);
+							
+				msg.channel.send(pers+eco[msg.guild.id][id].money+" "+eco.setup.devise+"` !");
 			}
 		} else {
 			msg.channel.send("Petit malin ! Tu n'as pas la permission");
@@ -90,28 +91,30 @@ module.exports = (msg,cmd,scmd) => {
 					var id = msg.mentions.members.first().id;
 					var pers = "<@"+id+"> `("+id+")`"+" possède : `";
 				}
-				var ecoContents = fs.readFileSync('eco.yml', 'utf8');
-				var eco = yaml.safeLoad(ecoContents);
-				if (eco[id] === undefined) {
-					eco[id] = {money: parseInt(cmd.split(" ")[2])};
-					let ecoyaml = yaml.safeDump(eco);
-					fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+				var ecoContents = fs.readFileSync('eco.json', 'utf8');
+				var eco = JSON.parse(ecoContents);
+				if (eco[msg.guild.id][id] === undefined) {
+					eco[msg.guild.id][id] = {money: parseInt(cmd.split(" ")[2])};
+					let ecojson = JSON.stringify(eco);
+					fs.writeFileSync('eco.json', ecojson, 'utf8');
 				} else {
-					eco[id].money = parseInt(cmd.split(" ")[2]);
-					let ecoyaml = yaml.safeDump(eco);
-					fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
+					eco[msg.guild.id][id].money = parseInt(cmd.split(" ")[2]);
+					let ecojson = JSON.stringify(eco);
+					fs.writeFileSync('eco.json', ecojson, 'utf8');
 				}
 				var ecoContents = fs.readFileSync('eco.yml', 'utf8');
-				var eco = yaml.safeLoad(ecoContents);
+				var eco = JSON.parse(ecoContents);
 							
-				msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
+				msg.channel.send(pers+eco[msg.guild.id][id].money+" "+eco.setup.devise+"` !");
 			}
 		} else {
 			msg.channel.send("Petit malin ! Tu n'as pas la permission");
 		}
 	} else if (cmd.split(" ")[1] === "remove") {
 		if (msg.guild.member(msg.author.id).hasPermission(8)) {
-			if (parseInt(cmd.split(" ")[2]) === NaN) {
+			if (cmd.split(" ")[2] === undefined) {
+				msg.channel.send("Veuillez préciser un nombre !")
+			} else if (parseInt(cmd.split(" ")[2]) === NaN) {
 				msg.channel.send("Ce n'est pas un nombre !")
 			} else {
 				if (msg.channel.type === "dm") {
@@ -124,21 +127,21 @@ module.exports = (msg,cmd,scmd) => {
 					var id = msg.mentions.members.first().id;
 					var pers = "<@"+id+"> `("+id+")`"+" possède : `";
 				}
+				var ecoContents = fs.readFileSync('eco.json', 'utf8');
+				var eco = JSON.parse(ecoContents);
+				if (eco[msg.guild.id][id] === undefined) {
+					eco[msg.guild.id][id] = {money: eco.setup.base-parseInt(cmd.split(" ")[2])};
+					let ecojson = JSON.stringify(eco);
+					fs.writeFileSync('eco.json', ecojson, 'utf8');
+				} else {
+					eco[msg.guild.id][id].money -= parseInt(cmd.split(" ")[2]);
+					let ecojson = JSON.stringify(eco);
+					fs.writeFileSync('eco.json', ecojson, 'utf8');
+				}
 				var ecoContents = fs.readFileSync('eco.yml', 'utf8');
-				var eco = yaml.safeLoad(ecoContents);
-				if (eco[id] === undefined) {
-				eco[id] = {money: -1*parseInt(cmd.split(" ")[2])};
-				let ecoyaml = yaml.safeDump(eco);
-				fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-			} else {
-				eco[id].money -= parseInt(cmd.split(" ")[2]);
-				let ecoyaml = yaml.safeDump(eco);
-				fs.writeFileSync('eco.yml', ecoyaml, 'utf8');
-			}
-			var ecoContents = fs.readFileSync('eco.yml', 'utf8');
-			var eco = yaml.safeLoad(ecoContents);
+				var eco = JSON.parse(ecoContents);
 							
-			msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
+				msg.channel.send(pers+eco[msg.guild.id][id].money+" "+eco.setup.devise+"` !");
 			}
 		} else {
 			msg.channel.send("Petit malin ! Tu n'as pas la permission");
