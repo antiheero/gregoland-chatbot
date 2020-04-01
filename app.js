@@ -16,9 +16,8 @@ app.get("/my", function(req, res) {
 	res.render("pages/index")
 });
 
-app.get("/eco", function(req, res) {
-	var eco = fs.readFileSync('eco.json', 'utf8');
-	res.send(eco);
+app.get("/eco.json", function(req, res) {
+	res.send(fs.readFileSync('eco.json', 'utf8'));
 });
 
 app.get("/", function(req, res) {
