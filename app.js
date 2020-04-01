@@ -17,8 +17,8 @@ app.get("/my", function(req, res) {
 });
 
 app.get("/eco", function(req, res) {
-	const eco = fs.readFileSync('eco.json', 'utf8');
-	res.send(eco)
+	var eco = fs.readFileSync('eco.json', 'utf8');
+	res.send(eco);
 });
 
 app.get("/", function(req, res) {
