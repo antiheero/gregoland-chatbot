@@ -16,6 +16,11 @@ app.get("/my", function(req, res) {
 	res.render("pages/index")
 });
 
+app.get("/eco", function(req, res) {
+	const eco = fs.readFileSync('eco.json', 'utf8');
+	res.send(eco)
+});
+
 app.get("/", function(req, res) {
 	//when we get an http get request to the root/homepage
 	res.send(indexhtml);
