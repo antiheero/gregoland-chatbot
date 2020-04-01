@@ -1,6 +1,6 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-module.exports = (guild,msg,cmd,scmd) => {
+module.exports = (msg,cmd,scmd) => {
 	if (cmd.split(" ")[1] === undefined) {
 		var ecoContents = fs.readFileSync('eco.yml', 'utf8');
 		var eco = yaml.safeLoad(ecoContents);
@@ -40,7 +40,7 @@ module.exports = (guild,msg,cmd,scmd) => {
 		}
 		msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
 	} else if (cmd.split(" ")[1] === "add") {
-		if (guild.members.get(msg.author.id).roles.has("688093358673231999")) {
+		if (msg.guild.member(msg.author.id).hasPermission(8)) {
 			if (parseInt(cmd.split(" ")[2]) === NaN) {
 				msg.channel.send("Ce n'est pas un nombre !")
 			} else {
@@ -74,7 +74,7 @@ module.exports = (guild,msg,cmd,scmd) => {
 			msg.channel.send("Petit malin ! Tu n'as pas la permission");
 		}
 	} else if (cmd.split(" ")[1] === "set") {
-		if (guild.members.get(msg.author.id).roles.has("688093358673231999")) {
+		if (msg.guild.member(msg.author.id).hasPermission(8)) {
 			if (cmd.split(" ")[2] === undefined) {
 				msg.channel.send("Veuillez préciser un nombre !")
 			} else if (parseInt(cmd.split(" ")[2]) === NaN) {
@@ -107,10 +107,10 @@ module.exports = (guild,msg,cmd,scmd) => {
 				msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
 			}
 		} else {
-			msg.channel.send("Petit malin ! Tu n'as pas la permission\nEn effet, il te manque le rôle 'Banquier Central' :dollar:");
+			msg.channel.send("Petit malin ! Tu n'as pas la permission");
 		}
 	} else if (cmd.split(" ")[1] === "remove") {
-		if (guild.members.get(msg.author.id).roles.has("688093358673231999")) {
+		if (msg.guild.member(msg.author.id).hasPermission(8)) {
 			if (parseInt(cmd.split(" ")[2]) === NaN) {
 				msg.channel.send("Ce n'est pas un nombre !")
 			} else {
@@ -140,6 +140,8 @@ module.exports = (guild,msg,cmd,scmd) => {
 							
 			msg.channel.send(pers+eco[id].money+" "+eco.setup.devise+"` !");
 			}
+		} else {
+			msg.channel.send("Petit malin ! Tu n'as pas la permission");
 		}
 	}
 }
