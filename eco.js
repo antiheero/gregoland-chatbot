@@ -66,7 +66,7 @@ module.exports = (msg,cmd,scmd) => {
 					let ecojson = JSON.stringify(eco);
 					fs.writeFileSync('eco.json', ecojson, 'utf8');
 				}
-				var ecoContents = fs.readFileSync('eco.yml', 'utf8');
+				var ecoContents = fs.readFileSync('eco.json', 'utf8');
 				var eco = JSON.parse(ecoContents);
 							
 				msg.channel.send(pers+eco[msg.guild.id][id].money+" "+eco.setup.devise+"` !");
@@ -102,7 +102,7 @@ module.exports = (msg,cmd,scmd) => {
 					let ecojson = JSON.stringify(eco);
 					fs.writeFileSync('eco.json', ecojson, 'utf8');
 				}
-				var ecoContents = fs.readFileSync('eco.yml', 'utf8');
+				var ecoContents = fs.readFileSync('eco.json', 'utf8');
 				var eco = JSON.parse(ecoContents);
 							
 				msg.channel.send(pers+eco[msg.guild.id][id].money+" "+eco.setup.devise+"` !");
@@ -138,7 +138,7 @@ module.exports = (msg,cmd,scmd) => {
 					let ecojson = JSON.stringify(eco);
 					fs.writeFileSync('eco.json', ecojson, 'utf8');
 				}
-				var ecoContents = fs.readFileSync('eco.yml', 'utf8');
+				var ecoContents = fs.readFileSync('eco.json', 'utf8');
 				var eco = JSON.parse(ecoContents);
 							
 				msg.channel.send(pers+eco[msg.guild.id][id].money+" "+eco.setup.devise+"` !");
