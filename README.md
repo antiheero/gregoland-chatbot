@@ -15,9 +15,10 @@ Bah, c'est moi qui l'ai fait, c'est mon mien à moi que j'ai fait **moi-même**.
 - [ ] Module de cafetière
 
 ## Comment l'intégrer à mon serveur ?
+### Faites (recommandé)
 Si vous voulez le mettre tel quel, utilisez [ce lien](https://discordapp.com/api/oauth2/authorize?client_id=684464572333293605&permissions=8&scope=bot) !
-
-Sinon, vous pouvez cloner le répertoire, mais il y a quelques variables d'environnement à régler :
+### Ou faites (non recommandé)
+Vous pouvez cloner le répertoire, mais il y a quelques variables d'environnement à régler :
 - BOT_TOKEN
 - CLIENT_ID
 - CLIENT_SECRET
