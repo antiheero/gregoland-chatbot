@@ -27,7 +27,8 @@ client.on('guildMemberAdd', member => {
 		`Bienvenue sur le serveur <@${member.user.id}> !`
 	);
 	if (member.guild.id === "681549703212564547") {
-		member.send("Vive le Parti unique !\nVa dans le salon de bienvenue pour recevoir ton rôle !\nFinallement, le Parti t'accorde 100 ₲ ! Pour les recevoir, fais : ```\n!eco\n```");
+		member.addRole("682535382516105231")
+		member.send("Vive le Parti unique !\nTu as reçu ton rôle !\nLe Parti t'accorde 100 ₲ ! Pour les recevoir, fais : ```\n!eco\n```");
 	} else if (member.guild.id === "689476199172407440") {
 		member.addRole("689477316744970363");
 	}
