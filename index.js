@@ -212,7 +212,7 @@ client.on('message', msg => {
 									content: "QR-code for "+qrtext+" !",
 									files: [{
 										attachment: url,
-										name="qrcode.jpg"
+										name: "qrcode.jpg"
 									}]
 								});
 							}
