@@ -198,8 +198,8 @@ client.on('message', msg => {
 						quality: 0.5,
 						margin: 2,
 						color: {
-							dark:"#00000000",
-							light:"#FFFFFFFF"
+							"dark":"#00000000",
+							"light":"#FFFFFFFF"
 						}
 					};
 					qrcode.toDataURL(qrtext,qropts,
