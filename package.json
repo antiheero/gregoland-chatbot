@@ -22,6 +22,7 @@
     "js-yaml": "^3.13.1",
     "minimist": ">=1.2.2",
     "node-fetch": "^2.6.0",
+    "qrcode": "^1.4.4",
     "serve-favicon": "^2.5.0",
     "uws": "^100.0.1",
     "vaca": "^2.0.0",

@@ -7,6 +7,7 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 const cool = require('cool-ascii-faces');
 const cats = require("cat-ascii-faces");
 const vaca = require("vaca");
+const qrcode= require("qrcode");
 
 console.log("Logging in with this token : \""+BOT_TOKEN+"\" !")
 
@@ -189,6 +190,30 @@ client.on('message', msg => {
 					msg.channel.send(vaca());
 				} else if (scmd = "cat") {
 					msg.channel.send(cats());
+				} else if (scmd = "qr") {
+					var qrtext = cmd.slice(3);
+					var qropts = {
+						errorCorrectionLevel: 'H',
+						type: 'image/jpeg',
+						quality: 0.5,
+						margin: 2,
+						color: {
+							dark:"#00000000",
+							light:"#FFFFFFFF"
+						}
+					};
+					qrcode.toDataURL(qrtext,qropts,
+						function (err,url) {
+							if (err) {
+								msg.channel.send("Oops, there was an error !");
+								console.log(err);
+							} else {
+								msg.channel.send({
+									"content": "QR-code for '"+qrtext+"' !",
+									"files": [url]
+								});
+						}
+					);
 				} else if (scmd === "cr") {
 					const users = msg.mentions.users.array();
 					const user = users[0];
