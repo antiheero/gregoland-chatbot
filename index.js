@@ -210,7 +210,10 @@ client.on('message', msg => {
 							} else {
 								msg.channel.send({
 									content: "QR-code for "+qrtext+" !",
-									files: ["file://"+url]
+									files: [{
+										attachment: url,
+										name="qrcode.jpg"
+									}]
 								});
 							}
 						}
