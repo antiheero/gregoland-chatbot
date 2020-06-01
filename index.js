@@ -5,6 +5,7 @@ const client = new Discord.Client();
 const BOT_TOKEN = process.env.BOT_TOKEN;
 
 const cool = require('cool-ascii-faces');
+const cats = require("cat-ascii-faces");
 const vaca = require("vaca");
 
 console.log("Logging in with this token : \""+BOT_TOKEN+"\" !")
@@ -186,6 +187,8 @@ client.on('message', msg => {
 					msg.channel.send(cool());
 				} else if (scmd === "cow") {
 					msg.channel.send(vaca());
+				} else if (scmd = "cat") {
+					msg.channel.send(cats());
 				} else if (scmd === "cr") {
 					const users = msg.mentions.users.array();
 					const user = users[0];
