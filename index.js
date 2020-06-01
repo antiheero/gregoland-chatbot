@@ -3,6 +3,7 @@ const yaml = require('js-yaml');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const BOT_TOKEN = process.env.BOT_TOKEN;
+const cool = require('cool-ascii-faces');
 console.log("Logging in with this token : \""+BOT_TOKEN+"\" !")
 
 const prefix = ["!", "/"];
@@ -178,6 +179,8 @@ client.on('message', msg => {
 					}
 				} else if (scmd === "avatar") {
 					msg.channel.send("Your avatar :",{files:[msg.author.avatarURL]})
+				} else if (scmd === "face") {
+					msg.channel.send(cool());
 				} else if (scmd === "cr") {
 					const users = msg.mentions.users.array();
 					const user = users[0];
