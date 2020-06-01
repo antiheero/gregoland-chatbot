@@ -188,9 +188,9 @@ client.on('message', msg => {
 					msg.channel.send(cool());
 				} else if (scmd === "cow") {
 					msg.channel.send(vaca());
-				} else if (scmd = "cat") {
+				} else if (scmd === "cat") {
 					msg.channel.send(cats());
-				} else if (scmd = "qr") {
+				} else if (scmd === "qr") {
 					var qrtext = cmd.slice(3);
 					var qropts = {
 						errorCorrectionLevel: 'H',
