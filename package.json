@@ -23,6 +23,7 @@
     "node-fetch": "^2.6.0",
     "serve-favicon": "^2.5.0",
     "uws": "^100.0.1",
+    "vaca": "^2.0.0",
     "yaml": "^1.7.2"
   },
   "devDependencies": {
