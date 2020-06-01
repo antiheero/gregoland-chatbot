@@ -7,7 +7,7 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 const cool = require('cool-ascii-faces');
 const cats = require("cat-ascii-faces");
 const vaca = require("vaca");
-const qrcode= require("qrcode");
+const qrcode = require("qrcode");
 
 console.log("Logging in with this token : \""+BOT_TOKEN+"\" !")
 
@@ -209,9 +209,10 @@ client.on('message', msg => {
 								console.log(err);
 							} else {
 								msg.channel.send({
-									"content": "QR-code for '"+qrtext+"' !",
-									"files": [url]
+									content: "QR-code for "+qrtext+" !",
+									files": [url]
 								});
+							}
 						}
 					);
 				} else if (scmd === "cr") {
