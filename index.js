@@ -185,9 +185,9 @@ client.on('message', msg => {
 				} else if (scmd === "avatar") {
 					msg.channel.send("Your avatar :",{files:[msg.author.avatarURL]})
 				} else if (scmd === "face") {
-					msg.channel.send(cool());
+					msg.channel.send("```\n"+cool()+"\n```");
 				} else if (scmd === "cow") {
-					msg.channel.send(vaca());
+					msg.channel.send("```\n"+vaca()+"\n```");
 				} else if (scmd === "cat") {
 					msg.channel.send(cats());
 				} else if (scmd === "qr") {
@@ -208,13 +208,7 @@ client.on('message', msg => {
 								msg.channel.send("Oops, there was an error !");
 								console.log(err);
 							} else {
-								msg.channel.send({
-									content: "QR-code for "+qrtext+" !",
-									files: [{
-										attachment: url,
-										name: "qrcode.jpg"
-									}]
-								});
+								msg.channel.send(url);
 							}
 						}
 					);
