@@ -189,7 +189,7 @@ client.on('message', msg => {
 				} else if (scmd === "cow") {
 					msg.channel.send("```\n"+vaca()+"\n```");
 				} else if (scmd === "cat") {
-					msg.channel.send(cats());
+					msg.channel.send("```\n"+cats()+"\n```");
 				} else if (scmd === "qr") {
 					var qrtext = cmd.slice(3);
 					var qropts = {
